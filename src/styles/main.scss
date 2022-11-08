@@ -198,4 +198,182 @@ body {
             color: #000000;
         }
     }
+
+    .FAQ {
+        padding: 60px 0 80px;
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 42px;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 24px;
+        }
+
+        .accordion .accordion-item {
+            border: none;
+            margin-bottom: 20px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+
+            .accordion-header {
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                border: none;
+
+                .accordion-button {
+                    padding: 20px;
+                    border: none !important;
+                    font-family: 'DM Sans';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #3C3C3C;
+                    background-color: #fff;
+                    box-shadow: none !important;
+
+                    &::after {
+                        display: none;
+                    }
+
+                    .burger {
+                        position: relative;
+                        width: 32px;
+                        height: 32px;
+                        transition: all .3s ease-in-out;
+                        background: #E0F7DC;
+                        margin-right: 20px;
+                        padding: 2px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .burger1,
+                        .burger2 {
+                            position: absolute;
+                            width: 70%;
+                            height: 2px;
+                            background-color: #3C3C3C;
+                            transition: all .3s ease-in-out;
+                            top: 50%;
+                        }
+
+                        .burger2 {
+                            transform: rotate(0deg);
+                        }
+
+                        @media(max-width: 992px) {
+                            width: 20px;
+                            height: 20px;
+                            margin-left: 15px;
+                        }
+                    }
+
+                    &.collapsed {
+
+
+                        .burger {
+                            .burger2 {
+                                transform: rotate(90deg);
+                            }
+                        }
+                    }
+
+                    .accordion-item {
+                        border: none;
+                        margin-bottom: 8px;
+                        box-shadow: 0px 8px 32px rgba(58, 0, 45, 0.06);
+                        background: #fff;
+                        border-radius: 10px;
+
+                        .accordion-header {
+                            cursor: pointer;
+                            transition: all .5s ease-in-out;
+                            border: none;
+
+                            .accordion-button {
+                                padding: 20px;
+                                border: none !important;
+                                font-size: 16px;
+                                color: red;
+                                width: 100%;
+                                outline: none;
+                                border-radius: 10px;
+                                transition: all .5s ease-in-out;
+                                box-shadow: none;
+                                background: #fff;
+
+                                &::after {
+                                    display: none;
+                                }
+
+                                .burger {
+                                    position: relative;
+                                    width: 32px;
+                                    height: 32px;
+                                    transition: all .5s ease-in-out;
+                                    background: #DCEDF7;
+                                    margin-right: 20px;
+                                    padding: 2px;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .burger1,
+                                    .burger2 {
+                                        position: absolute;
+                                        width: 70%;
+                                        height: 2px;
+                                        background-color: red;
+                                        transition: all .5s ease-in-out;
+                                        top: 50%;
+                                    }
+
+                                    .burger2 {
+                                        transform: rotate(0deg);
+                                    }
+
+                                    @media(max-width: 992px) {
+                                        width: 20px;
+                                        height: 20px;
+                                        margin-left: 15px;
+                                    }
+                                }
+
+                                &.collapsed {
+
+
+                                    .burger {
+                                        .burger2 {
+                                            transform: rotate(90deg);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .accordion-body {
+                padding-left: 70px;
+                padding-top: 0;
+
+                p {
+                    font-family: 'DM Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #000000;
+                }
+            }
+        }
+    }
 }
