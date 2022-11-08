@@ -57,6 +57,7 @@ body {
         width: 100%;
         top: 0;
         left: 0;
+        z-index: 11111;
 
         .logo {
             display: flex;
@@ -122,7 +123,15 @@ body {
     }
 
     .ToUsers {
-        padding: 157px 0;
+        padding: 157px 0 150px;
+        position: relative;
+
+        .rightTree {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+        }
 
         h1 {
             font-family: 'DM Sans', sans-serif;
@@ -131,13 +140,15 @@ body {
             line-height: 42px;
             text-transform: uppercase;
             color: #000000;
-            margin-bottom: 36px;            
+            margin-bottom: 36px;
         }
 
         .cards {
             background: #FFFFFF;
             box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.08), 0px 2px 24px rgba(0, 0, 0, 0.08);
             border-radius: 15px;
+            cursor: pointer;
+            display: block;
 
             .img {
 
