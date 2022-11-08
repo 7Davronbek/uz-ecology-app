@@ -1,6 +1,7 @@
 import React from 'react'
 import Charity from '../components/Charity'
 import FAQ from '../components/FAQ'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import News from '../components/News'
@@ -19,7 +20,7 @@ const Main = () => {
             <Charity />
             <SellingOrganization />
             <PlantingOrganization />
-            <div className="vh-100"></div>
+            <Footer />
         </>
     )
 }
