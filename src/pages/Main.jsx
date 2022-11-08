@@ -4,6 +4,7 @@ import FAQ from '../components/FAQ'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import News from '../components/News'
+import PlantingOrganization from '../components/PlantingOrganization'
 import SellingOrganization from '../components/SellingOrganization'
 import ToUsers from '../components/ToUsers'
 
@@ -17,6 +18,7 @@ const Main = () => {
             <FAQ />
             <Charity />
             <SellingOrganization />
+            <PlantingOrganization />
             <div className="vh-100"></div>
         </>
     )
