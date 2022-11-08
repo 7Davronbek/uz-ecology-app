@@ -427,4 +427,28 @@ body {
             }
         }
     }
+
+    .SellingOrganization {
+        padding-top: 86px;
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            margin-bottom: 45px;
+            font-size: 32px;
+            line-height: 42px;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        h2 {
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 33px;
+            color: #3C3C3C;
+            margin-top: 30px;
+        }
+    }
 }
