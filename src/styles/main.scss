@@ -376,4 +376,55 @@ body {
             }
         }
     }
+
+    .Charity {
+        display: flex;
+
+        .rightCol {
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+            }
+        }
+
+        .myCol {
+            padding-top: 180px;
+            padding-bottom: 284px;
+            // position: absolute;
+            top: 0;
+            left: 0;
+            background: #E0F7DC;
+            box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 0px 60px 60px 0px;
+        }
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 40px;
+            letter-spacing: -0.01em;
+            color: #343B4C;
+            width: 350px;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        .payWrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 35px;
+
+            a {
+                margin-right: 30px;
+            }
+        }
+    }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Charity from '../components/Charity'
 import FAQ from '../components/FAQ'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
@@ -13,6 +14,7 @@ const Main = () => {
             <ToUsers />
             <News />
             <FAQ />
+            <Charity />
             <div className="vh-100"></div>
         </>
     )
