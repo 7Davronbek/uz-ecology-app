@@ -58,6 +58,7 @@ body {
         top: 0;
         left: 0;
         z-index: 11111;
+        transition: all .7s ease-in-out;
 
         .logo {
             display: flex;
@@ -71,6 +72,7 @@ body {
                 color: #ffffff;
                 margin-left: 12px;
                 width: 350px;
+                transition: all .5s ease-in-out;
             }
         }
 
@@ -86,6 +88,21 @@ body {
                 color: #000000;
                 border: none;
                 outline: none;
+            }
+        }
+
+        &.active {
+            // background-color: #fff;
+            padding: 20px 0;
+            backdrop-filter: blur(20px);
+            background: #ffffff4a;
+            box-shadow: 0 0 10px silver;
+
+            .logo {
+
+                span {
+                    color: #000;
+                }
             }
         }
     }
