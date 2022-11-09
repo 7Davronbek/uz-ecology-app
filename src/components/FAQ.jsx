@@ -25,6 +25,7 @@ const FAQ = () => {
 
                     <div className="row">
                         <div className="col-12">
+                            
                             <Accordion className='service__list w-100 border2' open={open} toggle={toggle}>
                                 <AccordionItem className='wrap'>
                                     <AccordionHeader targetId='1'>
