@@ -26,7 +26,7 @@ const Reports = () => {
     };
 
     return (
-        <div className='Reports'>
+        <div className='Reports inputsStyle'>
             <UserLayout>
 
                 <h1>Xisobotlar</h1>

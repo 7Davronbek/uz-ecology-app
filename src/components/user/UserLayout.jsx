@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
     Accordion,
     AccordionBody,
@@ -66,7 +66,7 @@ const UserLayout = (props) => {
                             </AccordionHeader>
                             <AccordionBody accordionId='2'>
                                 <Link className={location.pathname === '/sales' ? 'active' : ''} to='/sales'>Savdolar</Link>
-                                <Link className={location.pathname === '/' ? 'active' : ''} to='/'>Bitimlar</Link>
+                                <Link className={location.pathname === '/transactions' ? 'active' : ''} to='/transactions'>Bitimlar</Link>
                             </AccordionBody>
                         </AccordionItem>
 
