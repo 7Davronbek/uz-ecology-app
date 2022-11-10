@@ -780,4 +780,43 @@ body {
             height: 450px;
         }
     }
+
+    .ControlPanel {
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 36px;
+            color: #404040;
+            margin-bottom: 36px;
+        }
+
+        .cards {
+            background: #FFFFFF;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            text-align: center;
+
+            .cardsTop {
+                font-family: 'DM Sans';
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 23px;
+                color: #FFFFFF;
+                background-color: $green;
+                padding: 21.5px 10px;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .cardsBody {
+                font-family: 'DM Sans';
+                font-weight: 500;
+                font-size: 60px;
+                line-height: 78px;
+                color: #404040;
+                padding: 30px 10px;
+            }
+        }
+    }
 }

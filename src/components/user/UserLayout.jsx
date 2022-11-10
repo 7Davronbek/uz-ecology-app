@@ -5,7 +5,7 @@ import {
     AccordionHeader,
     AccordionItem,
 } from 'reactstrap';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const UserLayout = (props) => {
     const [open, setOpen] = useState('0');
@@ -16,6 +16,7 @@ const UserLayout = (props) => {
             setOpen(id);
         }
     };
+    const location = useLocation()
     return (
         <div className='UserLayout'>
 
@@ -47,8 +48,8 @@ const UserLayout = (props) => {
                                 <h5><span><img src="assets/icon/filter.svg" alt="" /></span> Bosh sahifa</h5>
                             </AccordionHeader>
                             <AccordionBody accordionId='1'>
-                                <Link to='/'>Boshqaruv paneli</Link>
-                                <Link to='/'>Sozlamalar</Link>
+                                <Link className={location.pathname === '/control-panel' ? 'active' : ''} to='/control-panel'>Boshqaruv paneli</Link>
+                                <Link className={location.pathname === '/' ? 'active' : ''} to='/'>Sozlamalar</Link>
                             </AccordionBody>
                         </AccordionItem>
 
@@ -57,8 +58,8 @@ const UserLayout = (props) => {
                                 <h5><span><img src="assets/icon/deal.svg" alt="" /></span> Savdolar va bitimlar</h5>
                             </AccordionHeader>
                             <AccordionBody accordionId='2'>
-                                <Link to='/'>Savdolar</Link>
-                                <Link to='/'>Bitimlar</Link>
+                                <Link className={location.pathname === '/' ? 'active' : ''} to='/'>Savdolar</Link>
+                                <Link className={location.pathname === '/' ? 'active' : ''} to='/'>Bitimlar</Link>
                             </AccordionBody>
                         </AccordionItem>
 
@@ -84,7 +85,7 @@ const UserLayout = (props) => {
 
                     </Accordion>
 
-                    <h6 className='last'><Link to='/'><span><img src="assets/icon/infoSquare.svg" alt="" /></span> Xisobotlarim </Link></h6>
+                    <h6 className={`last ${location.pathname === '/reports' ? 'active' : ''}`}><Link to='/reports'><span><img src="assets/icon/infoSquare.svg" alt="" /></span> Xisobotlarim </Link></h6>
 
                 </div>
                 <div className="col-lg-9 px-3 bottomRight">
