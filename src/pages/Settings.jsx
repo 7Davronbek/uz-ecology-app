@@ -20,8 +20,8 @@ const Settings = () => {
 
                     <div className="col-lg-4">
 
-                        <label htmlFor="raqam">SMS KODNI KIRITING</label>
-                        <input type="text" id='raqam' placeholder='* * * * * *' className="form-control" />
+                        <label htmlFor="sms">SMS KODNI KIRITING</label>
+                        <input type="text" id='sms' placeholder='* * * * * *' className="form-control" />
 
                         <button className="btn myBtn secondary mb-4">Yuborish</button>
                     </div>

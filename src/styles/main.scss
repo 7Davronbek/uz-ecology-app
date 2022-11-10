@@ -529,6 +529,85 @@ body {
         background-color: rgba(0, 0, 0, 0.2);
     }
 
+    .inputsStyle {
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 36px;
+            color: #404040;
+            margin-bottom: 36px;
+        }
+
+        h2 {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: -0.01em;
+            color: #343B4C;
+            margin-bottom: 24px;
+        }
+
+        label {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #62687F;
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            background: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        textarea {
+            height: 120px;
+
+        }
+
+        select {
+            background: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            padding: 7px 9px;
+            outline: none;
+        }
+
+        .myBtn {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            padding: 12px 20px;
+            background-color: $green;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+
+            &.secondary {
+                background-color: transparent;
+                border: 1px solid $green;
+                color: #000;
+            }
+        }
+
+        .map {
+            height: 450px;
+        }
+    }
+
     .UserLayout {
         height: 100vh;
         overflow: hidden;
@@ -544,6 +623,85 @@ body {
 
             .navabarLeft {
                 background-color: $green;
+            }
+
+            .navbarRight {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-right: 30px !important;
+
+                .userWrap {
+
+                    h4 {
+                        font-family: 'DM Sans';
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 21px;
+                        color: #8D96B2;
+                    }
+
+                    h3 {
+                        font-family: 'DM Sans';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #C3CBD4;
+                    }
+                }
+
+                .inputWrap {
+                    display: flex;
+                    align-items: center;
+                    background: rgba(141, 150, 178, 0.1);
+                    border-radius: 8px;
+                    padding: 10px 15px;
+                    width: 30%;
+
+                    input {
+                        margin-bottom: 0;
+                        font-family: 'DM Sans';
+                        font-weight: 400;
+                        font-size: 15px;
+                        line-height: 20px;
+                        color: #000;
+                        background: transparent;
+                        border: none;
+                        box-shadow: none !important;
+                    }
+                }
+
+                .phoneWrap {
+                    display: flex;
+                    align-items: center;
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 17px;
+                    }
+                }
+
+                select {
+                    width: 80px;
+                    font-family: 'DM Sans';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: #8D96B2;
+                    background: transparent;
+                    border: none;
+                    margin-bottom: 0;
+
+                    option {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 21px;
+                        color: #8D96B2;
+                    }
+                }
             }
         }
 
@@ -693,7 +851,6 @@ body {
             }
         }
 
-
         .logo {
             display: flex;
             align-items: center;
@@ -708,85 +865,6 @@ body {
                 width: 350px;
                 transition: all .5s ease-in-out;
             }
-        }
-    }
-
-    .inputsStyle {
-
-        h1 {
-            font-family: 'DM Sans';
-            font-weight: 700;
-            font-size: 28px;
-            line-height: 36px;
-            color: #404040;
-            margin-bottom: 36px;
-        }
-
-        h2 {
-            font-family: 'DM Sans';
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 40px;
-            letter-spacing: -0.01em;
-            color: #343B4C;
-            margin-bottom: 24px;
-        }
-
-        label {
-            font-family: 'DM Sans';
-            font-weight: 700;
-            font-size: 13px;
-            line-height: 20px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #62687F;
-            margin-bottom: 6px;
-        }
-
-        .form-control {
-            background: #FFFFFF;
-            border: 1px solid #DDDDDD;
-            border-radius: 3px;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        textarea {
-            height: 120px;
-
-        }
-
-        select {
-            background: #FFFFFF;
-            border: 1px solid #DDDDDD;
-            border-radius: 3px;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            width: 100%;
-            padding: 7px 9px;
-            outline: none;
-        }
-
-        .myBtn {
-            font-family: 'DM Sans';
-            font-weight: 700;
-            padding: 12px 20px;
-            background-color: $green;
-            font-size: 12px;
-            line-height: 20px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #FFFFFF;
-
-            &.secondary {
-                background-color: transparent;
-                border: 1px solid $green;
-                color: $green;
-            }
-        }
-
-        .map {
-            height: 450px;
         }
     }
 

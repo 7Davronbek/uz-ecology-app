@@ -38,7 +38,30 @@ const UserLayout = (props) => {
                     </Link>
                 </div>
                 <div className="col-lg-9 px-3 navbarRight">
-                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse et ullam assumenda porro dolorum aliquam tempora consectetur voluptatum nemo qui.</h5>
+                    <div className="inputWrap">
+                        <input placeholder='Daraxt joylashuvi bo’yicha qidiruv' type="text" className="form-control" />
+                        <span><img src="assets/icon/search.svg" alt="" /></span>
+                    </div>
+                    <div className="btn myBtn">Xayriya qilish</div>
+
+                    <div className="phoneWrap">
+                        <span><img src="assets/icon/phone.svg" alt="" /></span>
+                        <div>
+                            <a target={'_blank'} rel="noreferrer" href="tel:+998 98 800 77 19">+998 (98) 800 77 19</a>
+                            <a target={'_blank'} rel="noreferrer" href="tel:+998 95 500 77 19">+998 (95) 500 77 19</a>
+                        </div>
+                    </div>
+
+                    <select name="" id="">
+                        <option value="">Uzb</option>
+                        <option value="">Рус</option>
+                        <option value="">Eng</option>
+                    </select>
+
+                    <div className="userWrap">
+                        <h4>Yashil Daraxt</h4>
+                        <h3>“OOO YASHIL DARAXT” </h3>
+                    </div>
                 </div>
 
             </div>
