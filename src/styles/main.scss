@@ -681,6 +681,10 @@ body {
                     }
                 }
             }
+
+            .bottomRight {
+                padding: 55px 25px !important;
+            }
         }
 
 
@@ -698,6 +702,59 @@ body {
                 width: 350px;
                 transition: all .5s ease-in-out;
             }
+        }
+    }
+
+    .Reports {
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 36px;
+            color: #404040;
+            margin-bottom: 36px;
+        }
+
+        h2 {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: -0.01em;
+            color: #343B4C;
+            margin-bottom: 24px;
+        }
+
+        label {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #62687F;
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            background: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .myBtn {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            padding: 12px 20px;
+            background-color: $green;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #FFFFFF;
         }
     }
 }
