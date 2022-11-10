@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UserLayout from '../components/user/UserLayout'
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const Reports = () => {
+
+    const [center, setCenter] = useState({
+        lat: 41.3127,
+        lng: 69.2785,
+    });
+    const containerStyle = {
+        width: '100%',
+        height: '100%',
+    };
+
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: 'AIzaSyAkkKvMyf8Tk3Q8s7MWXin6njbtjIjq2S4',
+    });
+
+    const onMapClick = (e) => {
+        setCenter({
+            lat: e?.latLng?.lat(),
+            lng: e?.latLng?.lng(),
+        });
+    };
+
     return (
         <div className='Reports'>
             <UserLayout>
@@ -137,6 +160,28 @@ const Reports = () => {
                     <div className="col-lg-4">
                         <label htmlFor="manzil">manzilni kiriting</label>
                         <textarea name="" id="manzil" cols="40" className='form-control' ></textarea>
+                    </div>
+
+                    <div className="col-12">
+                        {isLoaded ? (
+                            <div className="col-12 map">
+                                <GoogleMap
+                                    mapContainerStyle={containerStyle}
+                                    center={center}
+                                    zoom={17}
+                                    onClick={onMapClick}
+                                >
+                                    <></>
+                                </GoogleMap>
+                            </div>
+                        ) : (
+                            <></>
+                        )}
+
+                    </div>
+
+                    <div className="col-lg-4 col-md-6 ms-auto mt-5">
+                        <button className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
                     </div>
 
 
