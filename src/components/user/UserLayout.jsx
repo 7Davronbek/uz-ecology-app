@@ -42,7 +42,7 @@ const UserLayout = (props) => {
                         <input placeholder='Daraxt joylashuvi bo’yicha qidiruv' type="text" className="form-control" />
                         <span><img src="assets/icon/search.svg" alt="" /></span>
                     </div>
-                    <div className="btn myBtn">Xayriya qilish</div>
+                    <Link to='/donate' className="btn myBtn">Xayriya qilish</Link>
 
                     <div className="phoneWrap">
                         <span><img src="assets/icon/phone.svg" alt="" /></span>
