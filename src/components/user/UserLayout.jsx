@@ -56,7 +56,7 @@ const UserLayout = (props) => {
                             </AccordionHeader>
                             <AccordionBody accordionId='1'>
                                 <Link className={location.pathname === '/control-panel' ? 'active' : ''} to='/control-panel'>Boshqaruv paneli</Link>
-                                <Link className={location.pathname === '/' ? 'active' : ''} to='/'>Sozlamalar</Link>
+                                <Link className={location.pathname === '/settings' ? 'active' : ''} to='/settings'>Sozlamalar</Link>
                             </AccordionBody>
                         </AccordionItem>
 

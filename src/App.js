@@ -5,6 +5,7 @@ import Main from './pages/Main'
 import Sales from './pages/Sales'
 import Reports from './pages/Reports'
 import Transactions from './pages/Transactions'
+import Settings from './pages/Settings'
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
                     <Route path='/control-panel' element={<ControlPanel />} />
                     <Route path='/sales' element={<Sales />} />
                     <Route path='/transactions' element={<Transactions />} />
+                    <Route path='/settings' element={<Settings />} />
                 </Routes>
             </HashRouter>
         </>

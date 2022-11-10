@@ -777,6 +777,12 @@ body {
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: #FFFFFF;
+
+            &.secondary {
+                background-color: transparent;
+                border: 1px solid $green;
+                color: $green;
+            }
         }
 
         .map {
