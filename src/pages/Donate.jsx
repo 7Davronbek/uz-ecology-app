@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import DonateLayout from '../components/user/DonateLayout'
 
 const Donate = () => {
+    const navigate = useNavigate()
     return (
         <div className='Donate'>
             <DonateLayout>
@@ -10,7 +11,7 @@ const Donate = () => {
 
                 <div className="btnWrap">
                     <div className="col-4">
-                        <Link className='btn myBtn secondary' to='/'>bekor qilish</Link>
+                        <button onClick={() => navigate(-1)} className='btn myBtn secondary'>bekor qilish</button>
                     </div>
                     <div className="col-4">
                         <Link className='btn myBtn' to='/'>davom etish</Link>

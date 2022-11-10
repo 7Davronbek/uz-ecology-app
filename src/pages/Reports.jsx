@@ -180,13 +180,9 @@ const Reports = () => {
 
                     </div>
 
-                    <div className="col-lg-4 col-md-6 ms-auto mt-5">
+                    <div className="col-lg-4 col-md-6 ms-auto mt-5 myBtnP">
                         <button className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
                     </div>
-
-
-
-                    <div className="vh-100"></div>
 
                 </div>
 

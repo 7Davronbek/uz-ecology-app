@@ -95,7 +95,7 @@ const Sales = () => {
 
                     </div>
 
-                    <div className="col-lg-4 col-md-6 ms-auto mt-4">
+                    <div className="col-lg-4 col-md-6 ms-auto mt-4 myBtnP">
                         <button className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
                     </div>
 
