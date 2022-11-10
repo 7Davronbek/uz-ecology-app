@@ -532,6 +532,7 @@ body {
     .UserLayout {
         height: 100vh;
         overflow: hidden;
+        background-color: #F5F5F5;
 
         .userNavbar {
             align-items: center;
@@ -684,6 +685,8 @@ body {
 
             .bottomRight {
                 padding: 55px 25px !important;
+                overflow-y: auto;
+                height: 100%;
             }
         }
 
@@ -743,6 +746,22 @@ body {
             border-radius: 3px;
             margin-bottom: 20px;
             font-family: 'Montserrat', sans-serif;
+        }
+
+        textarea {
+            height: 120px;
+
+        }
+
+        select {
+            background: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            padding: 7px 9px;
+            outline: none;
         }
 
         .myBtn {
