@@ -41,15 +41,50 @@ const UserLayout = (props) => {
                     <h6><span><img src="assets/icon/home.svg" alt="" /></span> OOO YASHIL DARAXT</h6>
 
                     <Accordion className='service__list w-100 border2' open={open} toggle={toggle}>
+
                         <AccordionItem className='wrap'>
                             <AccordionHeader targetId='1'>
-                                Yashil makon loyihasi nima?
+                                <h5><span><img src="assets/icon/filter.svg" alt="" /></span> Bosh sahifa</h5>
                             </AccordionHeader>
                             <AccordionBody accordionId='1'>
-                                <p>Daraxtlar. Ular havodagi zararli karbonat angidridni yutib, o‘rniga kislorod ishlab chiqaradi va bizning nafas olishimizga yordam beradi. Ular issiqda salqinlik beradi, atrof-muhitni shovqinlardan himoya qiladi.</p>
+                                <Link to='/'>Boshqaruv paneli</Link>
+                                <Link to='/'>Sozlamalar</Link>
                             </AccordionBody>
                         </AccordionItem>
+
+                        <AccordionItem className='wrap'>
+                            <AccordionHeader targetId='2'>
+                                <h5><span><img src="assets/icon/deal.svg" alt="" /></span> Savdolar va bitimlar</h5>
+                            </AccordionHeader>
+                            <AccordionBody accordionId='2'>
+                                <Link to='/'>Savdolar</Link>
+                                <Link to='/'>Bitimlar</Link>
+                            </AccordionBody>
+                        </AccordionItem>
+
+                        <AccordionItem className='wrap'>
+                            <AccordionHeader targetId='3'>
+                                <h5><span><img src="assets/icon/gardener.svg" alt="" /></span> Ekuvchi tashkilot ma’lumotlari</h5>
+                            </AccordionHeader>
+                            {/* <AccordionBody accordionId='3'>
+                                <Link to='/'>Savdolar</Link>
+                                <Link to='/'>Bitimlar</Link>
+                            </AccordionBody> */}
+                        </AccordionItem>
+
+                        <AccordionItem className='wrap'>
+                            <AccordionHeader targetId='4'>
+                                <h5><span><img src="assets/icon/location.svg" alt="" /></span> Daraxtlar joylashuvi </h5>
+                            </AccordionHeader>
+                            {/* <AccordionBody accordionId='4'>
+                                <Link to='/'>Savdolar</Link>
+                                <Link to='/'>Bitimlar</Link>
+                            </AccordionBody> */}
+                        </AccordionItem>
+
                     </Accordion>
+
+                    <h6 className='last'><Link to='/'><span><img src="assets/icon/infoSquare.svg" alt="" /></span> Xisobotlarim </Link></h6>
 
                 </div>
                 <div className="col-lg-9 px-3 bottomRight">
