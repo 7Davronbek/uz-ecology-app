@@ -4,20 +4,16 @@ import { Link } from 'react-router-dom'
 const DonateLayout = (props) => {
     return (
         <div className='DonateLayout'>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
+            <div className="row h-100">
+                <div className="col-7 leftside">
+                    <Link to='/'><img src="assets/icon/fullIcon.svg" alt="" /></Link>
+                    <div className='leftWrap'>
+                        {props.children}
                     </div>
-                    <div className="col-lg-6">
-                        <Link to='/'><img src="assets/icon/fullIcon.svg" alt="" /></Link>
-                        <div>
-                            {props.children}
-                        </div>
-                    </div>
-                    <div className="col-lg-6">
-                        <div className="img">
-                            <img src="assets/image/cartBg.png" alt="" />
-                        </div>
+                </div>
+                <div className="col-5 rightImg">
+                    <div className="img">
+                        <img src="assets/image/cartBg.png" alt="" />
                     </div>
                 </div>
             </div>
