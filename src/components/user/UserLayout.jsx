@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Accordion,
     AccordionBody,
@@ -17,6 +17,13 @@ const UserLayout = (props) => {
         }
     };
     const location = useLocation()
+    // useEffect(() => {
+    //     if(location.pathname === '/sales' || location.pathname === 'transactions') {
+    //         setOpen('2')
+    //     }else if(location.pathname === '/control-panel' || location.pathname === '/settings') {
+    //         setOpen('1')
+    //     }
+    // }, [location.pathname])
     return (
         <div className='UserLayout'>
 
@@ -58,7 +65,7 @@ const UserLayout = (props) => {
                                 <h5><span><img src="assets/icon/deal.svg" alt="" /></span> Savdolar va bitimlar</h5>
                             </AccordionHeader>
                             <AccordionBody accordionId='2'>
-                                <Link className={location.pathname === '/' ? 'active' : ''} to='/'>Savdolar</Link>
+                                <Link className={location.pathname === '/sales' ? 'active' : ''} to='/sales'>Savdolar</Link>
                                 <Link className={location.pathname === '/' ? 'active' : ''} to='/'>Bitimlar</Link>
                             </AccordionBody>
                         </AccordionItem>
