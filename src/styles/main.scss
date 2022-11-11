@@ -1084,4 +1084,63 @@ body {
             }
         }
     }
+
+    .CartInformation {
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 40px;
+            text-align: center;
+            letter-spacing: -0.01em;
+            color: #343B4C;
+            width: 380px;
+            margin-bottom: 60px;
+        }
+
+        .cards {
+            background: #FFFFFF;
+            border: 1px solid #3E975B;
+            border-radius: 4px;
+            padding: 20px 16px ;
+            margin-bottom: 80px;
+
+            .inputWrap {
+                position: relative;
+
+                label {
+                    user-select: none;
+                    font-family: 'DM Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #828282;
+                    position: absolute;
+                    top: -10px;
+                    left: 7px;
+                    background: #fff;
+                    padding: 0 9px;
+                }
+            }
+
+            h3 {
+                font-family: 'DM Sans';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 20px;
+                color: #000000;
+            }
+
+            .form-control {
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: $green;
+                }
+            }
+        }
+    }
 }

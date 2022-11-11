@@ -8,6 +8,7 @@ import Transactions from './pages/Transactions'
 import Settings from './pages/Settings'
 import Donate from './pages/Donate'
 import Payment from './pages/Payment'
+import CartInformation from './pages/CartInformation'
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
 
                     <Route path='/donate' element={<Donate />} />
                     <Route path='/donate-payment' element={<Payment />} />
+                    <Route path='/donate-cart' element={<CartInformation />} />
                 </Routes>
             </HashRouter>
         </>

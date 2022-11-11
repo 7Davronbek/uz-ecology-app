@@ -8,13 +8,13 @@ const Payment = () => {
             <DonateLayout>
                 <h1>Xayriya qilish uchun to’lov turini tanlang</h1>
                 <div className="payWrap">
-                    <Link to='/'><img src="assets/image/pay/payme.png" alt="" /></Link>
-                    <Link to='/'><img src="assets/image/pay/click.png" alt="" /></Link>
+                    <Link to='/donate-cart'><img src="assets/image/pay/payme.png" alt="" /></Link>
+                    <Link to='/donate-cart'><img src="assets/image/pay/click.png" alt="" /></Link>
                 </div>
                 <div className="payWrap">
-                    <Link to='/'><img src="assets/image/pay/paypal.png" alt="" /></Link>
-                    <Link to='/'><img src="assets/image/pay/visa.png" alt="" /></Link>
-                    <Link to='/'><img src="assets/image/pay/master.png" alt="" /></Link>
+                    <Link to='/donate-cart'><img src="assets/image/pay/paypal.png" alt="" /></Link>
+                    <Link to='/donate-cart'><img src="assets/image/pay/visa.png" alt="" /></Link>
+                    <Link to='/donate-cart'><img src="assets/image/pay/master.png" alt="" /></Link>
                 </div>
             </DonateLayout>
         </div>
