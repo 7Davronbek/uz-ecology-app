@@ -7,6 +7,7 @@ import Reports from './pages/Reports'
 import Transactions from './pages/Transactions'
 import Settings from './pages/Settings'
 import Donate from './pages/Donate'
+import Payment from './pages/Payment'
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path='/settings' element={<Settings />} />
 
                     <Route path='/donate' element={<Donate />} />
+                    <Route path='/donate-payment' element={<Payment />} />
                 </Routes>
             </HashRouter>
         </>

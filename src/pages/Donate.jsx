@@ -35,7 +35,7 @@ const Donate = () => {
                         <button onClick={() => navigate(-1)} className='btn myBtn secondary'>bekor qilish</button>
                     </div>
                     <div className="col-3">
-                        <Link className='btn myBtn' to='/'>davom etish</Link>
+                        <Link className='btn myBtn' to='/donate-payment'>davom etish</Link>
                     </div>
                 </div>
             </DonateLayout>
