@@ -57,6 +57,11 @@ body {
             border: 1px solid $green;
             color: #000;
         }
+
+        &:hover {
+            background-color: $green;
+            color: #fff;
+        }
     }
 
     .card {
@@ -550,7 +555,7 @@ body {
     .inputsStyle {
 
         .myBtnP {
-            padding-bottom: 100px ;
+            padding-bottom: 100px;
         }
 
         h1 {
@@ -959,12 +964,92 @@ body {
             text-align: center;
             letter-spacing: -0.01em;
             color: #343B4C;
+            margin-bottom: 70px;
+            width: 340px;
+        }
+
+        .cards {
+            background: #FFFFFF;
+            border: 1px solid #8D96B2;
+            border-radius: 8px;
+            padding: 12px 10px;
+            margin-bottom: 20px;
+
+            h3 {
+                font-family: 'DM Sans';
+                font-weight: 500;
+                margin-bottom: 16px;
+                font-size: 16px;
+                line-height: 28px;
+                letter-spacing: -0.01em;
+                color: #000000;
+            }
+
+            .numberWrap {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 15px;
+
+                h5 {
+                    background: #FFFFFF;
+                    border: 1px solid #8D96B2;
+                    user-select: none;
+                    border-radius: 8px;
+                    width: 80px;
+                    height: 42px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .3s ease-in-out;
+                    cursor: pointer;
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: -0.01em;
+                    color: #000000;
+                    
+
+                    &:hover {
+                        background-color: $green;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .inputWrap {
+                display: flex;
+                align-items: center;
+                border: 1px solid #8D96B2;
+                border-radius: 8px;
+                padding: 0 10px;
+
+                input {
+                    border: none;
+                    box-shadow: none !important;
+                }
+
+                input, h6 {
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: -0.01em;
+                    color: #000000;
+                }
+
+                h6 {
+                    border-left: 1px solid #8D96B2;
+                    padding-left: 11px;
+                    user-select: none;
+                }
+            }
         }
 
         .myBtn {
             width: 100%;
             margin-bottom: 12px;
-            margin-right: 16px;
         }
 
         .btnWrap {
