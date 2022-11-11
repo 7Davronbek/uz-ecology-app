@@ -29,7 +29,7 @@ const CartInformation = () => {
 
                         </div>
 
-                        <button onClick={() => { nav('/', { replace: true }) }} className="btn myBtn w-100">Keyingisi</button>
+                        <button onClick={() => { nav('/donate-cart-confirm', { replace: true }) }} className="btn myBtn w-100">Keyingisi</button>
 
                     </div>
                 </div>

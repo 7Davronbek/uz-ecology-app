@@ -1009,7 +1009,7 @@ body {
                     line-height: 28px;
                     letter-spacing: -0.01em;
                     color: #000000;
-                    
+
 
                     &:hover {
                         background-color: $green;
@@ -1030,7 +1030,8 @@ body {
                     box-shadow: none !important;
                 }
 
-                input, h6 {
+                input,
+                h6 {
                     font-family: 'DM Sans';
                     font-weight: 500;
                     font-size: 16px;
@@ -1103,7 +1104,7 @@ body {
             background: #FFFFFF;
             border: 1px solid #3E975B;
             border-radius: 4px;
-            padding: 20px 16px ;
+            padding: 20px 16px;
             margin-bottom: 80px;
 
             .inputWrap {
@@ -1122,6 +1123,17 @@ body {
                     left: 7px;
                     background: #fff;
                     padding: 0 9px;
+                }
+            }
+
+            .form-control {
+
+                &.last {
+                    padding: 10px;
+
+                    &~label {
+                        top: -12px;
+                    }
                 }
             }
 
