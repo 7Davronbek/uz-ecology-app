@@ -1333,4 +1333,124 @@ body {
         }
 
     }
+
+    .Documents {
+
+        .circleWrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 20px;
+            margin-top: 30px;
+
+            h5 {
+                display: flex;
+                align-items: center;
+                font-family: 'DM Sans';
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                color: #AAABAD;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    color: $green;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .table {
+            margin-top: 35px;
+
+            thead {
+
+                th {
+                    font-family: 'DM Sans';
+                    font-weight: 700;
+                    font-size: 13px;
+                    line-height: 16px;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+            }
+
+            tbody {
+
+                th {
+                    vertical-align: middle;
+                }
+
+                span {
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 16px;
+                    color: #4F5A67;
+                }
+
+                h5 {
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 16px;
+                    color: #4F5A67;
+                    margin-bottom: 3px;
+                }
+
+                h6 {
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: #808185;
+                }
+
+                h4 {
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 16px;
+                    color: #3E975B;
+                    margin-bottom: 3px;
+                }
+
+                h3 {
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: #808185;
+                }
+
+                p {
+                    font-family: 'DM Sans';
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 16px;
+                    color: #4F5A67;
+                }
+            }
+        }
+
+        .rightWrap {
+            display: flex;
+            align-items: center;
+            background: rgba(141, 150, 178, 0.1);
+            border-radius: 8px;
+            padding: 10px 15px;
+
+            input {
+                margin-bottom: 0;
+                font-family: 'DM Sans';
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                color: #000;
+                background: transparent;
+                border: none;
+                box-shadow: none !important;
+            }
+        }
+    }
 }
