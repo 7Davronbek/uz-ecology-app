@@ -6,6 +6,30 @@ $green: #3E975B;
     overflow-x: hidden;
 }
 
+.icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+
+    background-color: #fff;
+
+    &.icon-info {
+        mask-image: url("../images/infoSquare.svg");
+        -webkit-mask-image: url("../images/infoSquare.svg");
+    }
+
+    &.icon-file {
+        mask-image: url("../images/file.svg");
+        -webkit-mask-image: url("../images/file.svg");
+    }
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 
@@ -243,7 +267,7 @@ body {
 
         .cards {
             transition: all .3s ease-in-out;
-            padding: 0 10px 10px ;
+            padding: 0 10px 10px;
             display: block;
 
             .img {
@@ -906,18 +930,30 @@ body {
                     transition: all .2s ease-in-out;
                     background-color: transparent;
                     border-radius: 0 20px 20px 0;
+                    margin-bottom: 15px;
 
                     a {
                         transition: all .2s ease-in-out;
                         padding: 8px 0;
                         border-radius: 0 20px 20px 0;
                         width: 100%;
+                        display: flex;
+                        align-items: center;
+                        padding: 12px 0;
+
+                        .icon {
+                            transition: all .2s ease-in-out;
+                        }
                     }
 
                     &:hover,
                     &.active {
                         background-color: #fff;
                         cursor: pointer;
+
+                        .icon {
+                            background-color: $green;
+                        }
 
                         a {
                             color: $green;
