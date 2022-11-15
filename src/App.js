@@ -10,6 +10,7 @@ import Donate from './pages/Donate'
 import Payment from './pages/Payment'
 import CartInformation from './pages/CartInformation'
 import CartConfirm from './pages/CartConfirm'
+import NewsDetail from './pages/NewsDetail'
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                     <Route path='/sales' element={<Sales />} />
                     <Route path='/transactions' element={<Transactions />} />
                     <Route path='/settings' element={<Settings />} />
+                    <Route path='/news-detail' element={<NewsDetail />} />
 
                     <Route path='/donate' element={<Donate />} />
                     <Route path='/donate-payment' element={<Payment />} />

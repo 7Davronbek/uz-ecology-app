@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
     const [navbar, setNavbar] = useState(false)
+    const location = useLocation()
 
     const changeNavbar = () => {
         if (window.scrollY >= 30) {
@@ -14,7 +15,7 @@ const Navbar = () => {
     window.addEventListener('scroll', changeNavbar);
 
     return (
-        <div className={`Navbar ${navbar ? 'active' : ''}`}>
+        <div className={`Navbar ${location.pathname === '/news-detail' && 'active '} ${navbar ? 'active' : ''}`}>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-6">
