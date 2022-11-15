@@ -12,6 +12,7 @@ import CartInformation from './pages/CartInformation'
 import CartConfirm from './pages/CartConfirm'
 import NewsDetail from './pages/NewsDetail'
 import ScrollToTop from './components/ScrollToTop'
+import Documents from './pages/Documents'
 
 const App = () => {
     return (
@@ -24,7 +25,7 @@ const App = () => {
                     <Route path='/sales' element={<Sales />} />
                     <Route path='/transactions' element={<Transactions />} />
                     <Route path='/settings' element={<Settings />} />
-                    <Route path='/documents' element={<Settings />} />
+                    <Route path='/documents' element={<Documents />} />
                     <Route path='/news-detail' element={<NewsDetail />} />
 
                     <Route path='/donate' element={<Donate />} />
