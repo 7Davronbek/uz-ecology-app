@@ -11,6 +11,7 @@ import Payment from './pages/Payment'
 import CartInformation from './pages/CartInformation'
 import CartConfirm from './pages/CartConfirm'
 import NewsDetail from './pages/NewsDetail'
+import ScrollToTop from './components/ScrollToTop'
 
 const App = () => {
     return (
@@ -30,6 +31,7 @@ const App = () => {
                     <Route path='/donate-cart' element={<CartInformation />} />
                     <Route path='/donate-cart-confirm' element={<CartConfirm />} />
                 </Routes>
+                <ScrollToTop />
             </HashRouter>
         </>
     )

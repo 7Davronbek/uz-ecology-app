@@ -229,7 +229,7 @@ body {
     }
 
     .News {
-        padding: 25px 0 70px;
+        padding: 25px 0 10px;
 
         h1 {
             font-family: 'DM Sans';
@@ -242,6 +242,9 @@ body {
         }
 
         .cards {
+            transition: all .3s ease-in-out;
+            padding: 0 10px 10px ;
+            display: block;
 
             .img {
                 height: 300px;
@@ -266,6 +269,32 @@ body {
                 }
             }
 
+            .wrap {
+                display: flex;
+                align-items: center;
+
+                h6 {
+                    font-family: 'DM Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #7a7a7a;
+                }
+
+                h5 {
+                    margin-left: 15px;
+                    font-family: 'DM Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #7a7a7a;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
             .content {
 
                 p {
@@ -276,6 +305,11 @@ body {
                     color: #000000;
                     margin-bottom: 14px;
                 }
+            }
+
+            &:hover {
+                box-shadow: 0 0 10px rgba(192, 192, 192, 0.479);
+                transform: translateY(-5px);
             }
         }
     }
