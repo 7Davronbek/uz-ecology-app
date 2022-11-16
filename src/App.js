@@ -18,6 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserType from './pages/UserType'
 import PhoneVerify from './pages/PhoneVerify'
+import Login from './pages/Login'
 
 const App = () => {
     return (
@@ -37,6 +38,7 @@ const App = () => {
                     <Route path='/register' element={<Register />} />
                     <Route path='/user-type' element={<UserType />} />
                     <Route path='/verify-phone' element={<PhoneVerify />} />
+                    <Route path='/login' element={<Login />} />
 
                     <Route path='/donate' element={<Donate />} />
                     <Route path='/donate-payment' element={<Payment />} />

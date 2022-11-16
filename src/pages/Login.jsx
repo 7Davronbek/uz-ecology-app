@@ -1,37 +1,20 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 import DonateLayout from '../components/user/DonateLayout'
-import { updateAuth } from '../redux/actions/authAction'
+import { LOGIN } from '../redux/actions/authAction'
 
-const Register = () => {
-    // const phone = useSelector(state => state.auth.userPhone)
-    // const password = useSelector(state => state.auth.userPassword)
+const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
-    const [loading, setLoading] = useState(false)
-
-    const next = () => {
-        setLoading(true)
-        if (phone.length > 7 && password.length > 4) {
-            dispatch(updateAuth({ userPhone: phone, userPassword: password }))
-            navigate('/user-type', { replace: true })
-            setLoading(false)
-        } else {
-            toast.error("Ma'lumotlarni to'ldiring")
-            setLoading(false)
-        }
-    }
-
     return (
-        <div className='Register'>
+        <div className='Login Register'>
             <DonateLayout>
 
-                <h1>Registratsiya</h1>
+                <h1>Kirish</h1>
 
                 <div className="col-lg-6">
                     <div className="cards">
@@ -41,9 +24,9 @@ const Register = () => {
                         <label htmlFor="password">Parol</label>
                         <input onChange={e => setPassword(e.target.value)} value={password} type="password" id='password' className="form-control" />
 
-                        <button onClick={next} disabled={loading} className="btn myBtn w-100">Keyingisi</button>
+                        <button onClick={() => dispatch(LOGIN(phone, password, navigate))} className="btn myBtn w-100">Kirish</button>
 
-                        <Link className='a' to='/login'>Akkauntingiz bormi?</Link>
+                        <Link className='a' to='/register'>Akkauntingiz yo'qmi?</Link>
                     </div>
                 </div>
 
@@ -52,4 +35,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Login

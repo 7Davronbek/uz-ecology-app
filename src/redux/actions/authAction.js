@@ -19,7 +19,7 @@ export const TEST = () => async (dispatch) => {
 }
 
 
-
+// REGISTRATION USER
 export const REGISTER = (e, phone, password, navigate) => async (dispatch) => {
     await axios.post(API_PATH + '/accounts/register/', { phone, role: Number(e), password })
         .then((res) => {
@@ -38,11 +38,23 @@ export const REGISTER = (e, phone, password, navigate) => async (dispatch) => {
         })
 }
 
+// REGISTRATION VERIFY PHONE
 export const PHONEVERIFY = (code, phone, password, navigate) => async (dispatch) => {
     await axios.post(API_PATH + '/accounts/verify-register/', { phone, code, password })
         .then((res) => {
             toast.success("Telefon raqami tasdiqlandi!")
             navigate('/login', { replace: true })
+        })
+        .catch((err) => {
+            toast.error("Ma'lumotlar noto'g'ri kiritilgan!")
+        })
+}
+
+// LOGIN USER
+export const LOGIN = (phone, password, navigate) => async (dispatch) => {
+    await axios.post(API_PATH + '/accounts/login/', { phone, password })
+        .then((res) => {
+            console.log(res);
         })
         .catch((err) => {
             toast.error("Ma'lumotlar noto'g'ri kiritilgan!")
