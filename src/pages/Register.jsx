@@ -19,7 +19,7 @@ const Register = () => {
     const next = () => {
         if (phone.length > 7 && password.length > 4) {
             dispatch(updateAuth({ userPhone: phone, userPassword: password }))
-            toast.success('Success')
+            // toast.success('Success')
             navigate('/user-type', { replace: true })
         } else {
             toast.error("Ma'lumotlarni to'ldiring")

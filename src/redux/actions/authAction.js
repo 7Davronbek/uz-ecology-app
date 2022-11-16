@@ -23,11 +23,17 @@ export const TEST = () => async (dispatch) => {
 export const REGISTER = (e, phone, password, navigate) => async (dispatch) => {
     await axios.post(API_PATH + '/accounts/register/', { phone, role: Number(e), password })
         .then((res) => {
+            if (res.status === 409) {
+                return toast.success("Foydalanuvchi allaqachon mavjud!")
+            }
             navigate('/verify-phone', { replace: true })
             toast.success("Iltimos, telefonni tasdiqlang!")
 
         })
         .catch((err) => {
+            if (err.response.status === 409) {
+                return toast.error("Foydalanuvchi allaqachon mavjud!")
+            }
             toast.error("Internet Error!")
         })
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import DonateLayout from '../components/user/DonateLayout'
 import axios from 'axios'
 import { API_PATH } from '../tools/constants'
@@ -37,6 +37,8 @@ const UserType = () => {
                         <h5>Daraxt ekuvchi</h5>
                         <button onClick={(e) => dispatch(REGISTER('2', phone, password, navigate))} className="btn myBtn w-100">Kirish</button>
                     </div>
+
+                    <Link className='a' to='/login'>Akkauntingiz bormi?</Link>
 
                 </div>
             </DonateLayout>
