@@ -3,7 +3,10 @@ import { UPDATE_LOGIN } from "../types/type"
 const initialStore = {
     isLoading: false,
     error: false,
-    user: []
+    user: [],
+    userPhone: '',
+    userPassword: '',
+    userType: ''
 }
 
 export const authReducer = (state = initialStore, action) => {

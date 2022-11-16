@@ -14,6 +14,8 @@ import NewsDetail from './pages/NewsDetail'
 import ScrollToTop from './components/ScrollToTop'
 import Documents from './pages/Documents'
 import Register from './pages/Register'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
@@ -39,6 +41,7 @@ const App = () => {
 
                 </Routes>
                 <ScrollToTop />
+                <ToastContainer position={'bottom-center'} />
             </HashRouter>
         </>
     )
