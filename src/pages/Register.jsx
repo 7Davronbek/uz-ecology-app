@@ -12,6 +12,7 @@ const Register = () => {
 
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
 
@@ -38,11 +39,12 @@ const Register = () => {
                         <label htmlFor="password">Parol</label>
                         <input onChange={e => setPassword(e.target.value)} value={password} type="password" id='password' className="form-control" />
 
-                        <button onClick={next} className="btn myBtn w-100">Keyingisi</button>
+                        <button onClick={next} disabled={loading} className="btn myBtn w-100">Keyingisi</button>
 
                         <Link className='a' to='/login'>Akkauntingiz bormi?</Link>
                     </div>
                 </div>
+
             </DonateLayout>
         </div>
     )
