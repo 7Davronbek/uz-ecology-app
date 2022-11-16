@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { API_PATH, ECO_USER_TOKEN } from "../../tools/constants";
+import { API_PATH, ECO_USER_TOKEN, ECO_USER_TYPE } from "../../tools/constants";
 import { UPDATE_LOGIN } from "../types/type"
 
 export const updateAuth = state => {
@@ -52,19 +52,25 @@ export const PHONEVERIFY = (code, phone, password, navigate) => async (dispatch)
 
 // LOGIN USER
 export const LOGIN = (phone, password, navigate) => async (dispatch) => {
-    await axios.post(API_PATH + '/accounts/login/', { phone, password })
-        .then((res) => {
-            toast.success("Success!")
-            dispatch(updateAuth({ userType: res.data.role, userToken: res.data.token }))
-            localStorage.setItem(ECO_USER_TOKEN, res.data.token)
-        })
-        .catch((err) => {
-            if (err.response.status === 406) {
-                return toast.error("Noto'g'ri parol!")
-            }
-            if (err.response.status === 404) {
-                return toast.error("Foydalanuvchi topilmadi!")
-            }
-            toast.error("Ma'lumotlar noto'g'ri kiritilgan!")
-        })
+    if (phone.length < 9 || password.length < 4) {
+        toast.error("Ma'lumotlar to'liq kiritilmagan!")
+    } else {
+        await axios.post(API_PATH + '/accounts/login/', { phone, password })
+            .then((res) => {
+                toast.success("Success!")
+                dispatch(updateAuth({ userType: res.data.role, userToken: res.data.token }))
+                localStorage.setItem(ECO_USER_TOKEN, res.data.token)
+                localStorage.setItem(ECO_USER_TYPE, res.data.role)
+                navigate('/reports', { replace: true })
+            })
+            .catch((err) => {
+                if (err.response.status === 406) {
+                    return toast.error("Noto'g'ri parol!")
+                }
+                if (err.response.status === 404) {
+                    return toast.error("Foydalanuvchi topilmadi!")
+                }
+                toast.error("Ma'lumotlar noto'g'ri kiritilgan!")
+            })
+    }
 }

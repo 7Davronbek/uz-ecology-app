@@ -1,4 +1,4 @@
-import { ECO_USER_TOKEN } from "../../tools/constants"
+import { ECO_USER_TOKEN, ECO_USER_TYPE } from "../../tools/constants"
 import { UPDATE_LOGIN } from "../types/type"
 
 const initialStore = {
@@ -7,7 +7,7 @@ const initialStore = {
     // user: [],
     userPhone: '',
     userPassword: '',
-    userType: '',
+    userType: localStorage.getItem(ECO_USER_TYPE) || '',
     userToken: localStorage.getItem(ECO_USER_TOKEN) || ''
 }
 
