@@ -16,6 +16,7 @@ import Documents from './pages/Documents'
 import Register from './pages/Register'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserType from './pages/UserType'
 
 const App = () => {
     return (
@@ -33,6 +34,7 @@ const App = () => {
                     <Route path='/news-detail' element={<NewsDetail />} />
 
                     <Route path='/register' element={<Register />} />
+                    <Route path='/user-type' element={<UserType />} />
 
                     <Route path='/donate' element={<Donate />} />
                     <Route path='/donate-payment' element={<Payment />} />

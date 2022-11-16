@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import DonateLayout from '../components/user/DonateLayout'
@@ -19,7 +19,7 @@ const Register = () => {
         if (phone.length > 7 && password.length > 4) {
             dispatch(updateAuth({ userPhone: phone, userPassword: password }))
             toast.success('Success')
-            navigate('/login', { replace: true })
+            navigate('/user-type', { replace: true })
         } else {
             toast.error("Ma'lumotlarni to'ldiring")
         }
