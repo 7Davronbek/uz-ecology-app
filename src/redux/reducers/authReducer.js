@@ -1,12 +1,14 @@
+import { ECO_USER_TOKEN } from "../../tools/constants"
 import { UPDATE_LOGIN } from "../types/type"
 
 const initialStore = {
     isLoading: false,
     error: false,
-    user: [],
+    // user: [],
     userPhone: '',
     userPassword: '',
-    userType: ''
+    userType: '',
+    userToken: localStorage.getItem(ECO_USER_TOKEN) || ''
 }
 
 export const authReducer = (state = initialStore, action) => {
