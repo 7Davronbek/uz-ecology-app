@@ -13,6 +13,7 @@ import CartConfirm from './pages/CartConfirm'
 import NewsDetail from './pages/NewsDetail'
 import ScrollToTop from './components/ScrollToTop'
 import Documents from './pages/Documents'
+import Register from './pages/Register'
 
 const App = () => {
     return (
@@ -28,6 +29,8 @@ const App = () => {
                     <Route path='/settings' element={<Settings />} />
                     <Route path='/documents' element={<Documents />} />
                     <Route path='/news-detail' element={<NewsDetail />} />
+
+                    <Route path='/register' element={<Register />} />
 
                     <Route path='/donate' element={<Donate />} />
                     <Route path='/donate-payment' element={<Payment />} />

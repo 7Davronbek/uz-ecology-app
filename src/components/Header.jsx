@@ -8,7 +8,7 @@ const Header = () => {
             <div className="row">
                 <div className="col-lg-6">
                     <h1>Tabiatdagi barcha narsalar biz uchun xizmat qiladi</h1>
-                    <Link to='/reports'>ro'yxatdan o'tish</Link>
+                    <Link to='/register'>ro'yxatdan o'tish</Link>
                 </div>
             </div>
         </div>

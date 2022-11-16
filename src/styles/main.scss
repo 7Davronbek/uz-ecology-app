@@ -1453,4 +1453,57 @@ body {
             }
         }
     }
+
+    .Register {
+
+        h1 {
+            font-family: 'DM Sans';
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 40px;
+            letter-spacing: -0.01em;
+            color: #343B4C;
+            margin-bottom: 60px;
+        }
+
+        label {
+            font-family: 'DM Sans';
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #62687F;
+            margin-bottom: 8px;
+        }
+
+        input {
+            font-family: 'DM Sans';
+            background: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 3px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+            height: 44px;
+        }
+
+        .btn {
+            margin-top: 50px;
+        }
+
+        a {
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            color: #3E975B;
+            text-align: center;
+            margin-top: 60px;
+            display: block;
+        }
+    }
 }
