@@ -19,6 +19,7 @@ const App = () => {
         <>
             <HashRouter>
                 <Routes>
+
                     <Route path='/' element={<Main />} />
                     <Route path='/reports' element={<Reports />} />
                     <Route path='/control-panel' element={<ControlPanel />} />
@@ -32,6 +33,7 @@ const App = () => {
                     <Route path='/donate-payment' element={<Payment />} />
                     <Route path='/donate-cart' element={<CartInformation />} />
                     <Route path='/donate-cart-confirm' element={<CartConfirm />} />
+
                 </Routes>
                 <ScrollToTop />
             </HashRouter>
