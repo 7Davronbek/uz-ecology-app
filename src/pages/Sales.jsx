@@ -22,8 +22,9 @@ const Sales = () => {
             lat: center.lat,
             lng: center.lng
         }}
-            onClick={() => console.log("Event Hanlder Called")}
-        />
+
+            onClick={() => console.log("Event Hanlder Called")} />
+
     }
 
     const { isLoaded } = useJsApiLoader({
@@ -32,7 +33,6 @@ const Sales = () => {
     });
 
     const onMapClick = (e) => {
-        console.log(e);
         setCenter({
             lat: e?.latLng?.lat(),
             lng: e?.latLng?.lng(),
