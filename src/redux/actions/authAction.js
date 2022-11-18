@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { API_PATH, ECO_USER_TOKEN, ECO_USER_TYPE } from "../../tools/constants";
+import { API_PATH, CONFIG, ECO_USER_TOKEN, ECO_USER_TYPE } from "../../tools/constants";
 import { UPDATE_LOGIN } from "../types/type"
 
 export const updateAuth = state => {
@@ -20,12 +20,18 @@ export const TEST = () => async (dispatch) => {
 
 
 // REGISTRATION USER
-export const REGISTER = (e, phone, password, navigate) => async (dispatch) => {
-    await axios.post(API_PATH + '/accounts/register/', { phone, role: Number(e), password })
+export const REGISTER = (role, phone, password, navigate) => async (dispatch) => {
+    const formData = new FormData()
+    formData.append('phone', phone)
+    formData.append('role', role)
+    formData.append('password', password)
+    console.log(role);
+    await axios.post(API_PATH + '/accounts/register/', formData, CONFIG)
         .then((res) => {
             if (res.status === 409) {
                 return toast.success("Foydalanuvchi allaqachon mavjud!")
             }
+            localStorage.setItem(ECO_USER_TYPE, role)
             navigate('/verify-phone', { replace: true })
             toast.success("Iltimos, telefonni tasdiqlang!")
 
@@ -40,7 +46,7 @@ export const REGISTER = (e, phone, password, navigate) => async (dispatch) => {
 
 // REGISTRATION VERIFY PHONE
 export const PHONEVERIFY = (code, phone, password, navigate) => async (dispatch) => {
-    await axios.post(API_PATH + '/accounts/verify-register/', { phone, code, password })
+    await axios.post(API_PATH + '/accounts/verify-register/', { phone, code, password, role: localStorage.getItem(ECO_USER_TYPE) })
         .then((res) => {
             toast.success("Telefon raqami tasdiqlandi!")
             navigate('/login', { replace: true })

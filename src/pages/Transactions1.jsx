@@ -19,14 +19,34 @@ const Transactions1 = () => {
 
     const [fileObj, setFileObj] = useState([])
     const [fileArray, setFileArray] = useState([])
-    const [file, setFile] = useState([null])
+    const [file, setFile] = useState([])
+
+    const [selectedImages, setSelectedImages] = useState([])
+    const [selectedImages2, setSelectedImages2] = useState([])
+
+    const onSelectFile = (e) => {
+        const selectedFiles = e.target.files
+        const selectedFilesArray = Array.from(selectedFiles)
+        console.log(...selectedFiles);
+
+        const imageArray = selectedFilesArray.map((file) => {
+            return URL.createObjectURL(file)
+        })
+
+        setSelectedImages(imageArray)
+        setSelectedImages2(...selectedFiles)
+    }
 
     const uploadMultipleFiles = (e) => {
         fileObj.push(e.target.files)
         for (let i = 0; i < fileObj[0].length; i++) {
             fileArray.push(URL.createObjectURL(fileObj[0][i]))
         }
-        setFile(fileArray)
+        const arr = Array.from(fileArray)
+        console.log(arr);
+        setFile(arr)
+        console.log(file);
+
     }
 
     const [loading, setLoading] = useState(false)
@@ -46,7 +66,7 @@ const Transactions1 = () => {
         formData.append('owner_fio', owner_fio)
         formData.append('phone', phone)
         formData.append('number_report', number_report)
-        formData.append('contracts_images', file)
+        formData.append('contracts_images', selectedImages2)
 
         formData.append('description', description)
 
@@ -145,10 +165,18 @@ const Transactions1 = () => {
                                 id='xisobot'
                                 className="form-control"
                                 multiple
-                                onChange={uploadMultipleFiles}
+                                accept='image/png, image/jpg, image/jpeg, image/webp'
+                                onChange={onSelectFile}
+                            // onChange={uploadMultipleFiles}
                             />
 
                             <div className="row">
+                                {/* {selectedImages && selectedImages.map((item, index) => (
+                                    <div key={index} className="col-4 mb-2">
+                                        <img className='w-100 h-100' style={{ objectFit: 'cover' }} src={item} alt="xisobot" />
+                                        <div onClick={() => setSelectedImages(selectedImages.filter((e) => e !== item))}>delete</div>
+                                    </div>
+                                ))} */}
                                 {fileArray && fileArray.map((url, index) => (
                                     <div key={index} className="col-4 mb-2">
                                         <img className='w-100 h-100' style={{ objectFit: 'cover' }}  src={url} alt="xisobot" />
