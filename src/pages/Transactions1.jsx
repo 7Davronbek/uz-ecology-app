@@ -13,11 +13,21 @@ const Transactions1 = () => {
     const [name_company, setname_company] = useState('')
     const [owner_jshshir, setowner_jshshir] = useState('')
     const [owner_fio, setowner_fio] = useState('')
-    const [partner_stir, setpartner_stir] = useState('')
-    const [partner_name, setpartner_name] = useState('')
-    const [partner_owner_jshshir, setpartner_owner_jshshir] = useState('')
-    const [partner_fio, setpartner_fio] = useState('')
+    const [phone, setphone] = useState('')
+    const [number_report, setnumber_report] = useState('')
     const [description, setdescription] = useState('')
+
+    const [fileObj, setFileObj] = useState([])
+    const [fileArray, setFileArray] = useState([])
+    const [file, setFile] = useState([null])
+
+    const uploadMultipleFiles = (e) => {
+        fileObj.push(e.target.files)
+        for (let i = 0; i < fileObj[0].length; i++) {
+            fileArray.push(URL.createObjectURL(fileObj[0][i]))
+        }
+        setFile(fileArray)
+    }
 
     const [loading, setLoading] = useState(false)
 
@@ -34,13 +44,13 @@ const Transactions1 = () => {
         formData.append('name_company', name_company)
         formData.append('owner_jshshir', owner_jshshir)
         formData.append('owner_fio', owner_fio)
-        formData.append('partner_stir', partner_stir)
-        formData.append('partner_name', partner_name)
-        formData.append('partner_owner_jshshir', partner_owner_jshshir)
-        formData.append('partner_fio', partner_fio)
+        formData.append('phone', phone)
+        formData.append('number_report', number_report)
+        formData.append('contracts_images', file)
+
         formData.append('description', description)
 
-        await axios.post(API_PATH + '/contracts/contract-with-partner/', formData, CONFIG)
+        await axios.post(API_PATH + '/contracts/contract/', formData, CONFIG)
             .then((res) => {
                 console.log(res);
                 setLoading(false)
@@ -117,35 +127,43 @@ const Transactions1 = () => {
 
                     </div>
 
-                    <div className="col-12">
-                        <h2>Daraxt ekilganligi to’g’risida onlayn AKT (kontragent ma’lumotlari)</h2>
-                    </div>
+                    <div className="row">
 
-                    <div className="col-lg-4">
+                        <div className="col-lg-4">
 
-                        <label htmlFor="stir2">tASHkilot stiri</label>
-                        <input required onChange={e => setpartner_stir(e.target.value)} value={partner_stir} type="text" id='stir2' className="form-control" />
+                            <label htmlFor="phone">Telefon raqami</label>
+                            <input required placeholder='+998 97 7777777' onChange={e => setphone(e.target.value)} value={phone}
+                                type="text" id='phone' className="form-control" />
 
-                    </div>
+                        </div>
 
-                    <div className="col-lg-4">
+                        <div className="col-lg-4">
 
-                        <label htmlFor="name2">tashkilot nomi</label>
-                        <input required onChange={e => setpartner_name(e.target.value)} value={partner_name} type="text" id='name2' className="form-control" />
+                            <label htmlFor="xisobot">Foto xisobot</label>
+                            <input
+                                type="file"
+                                id='xisobot'
+                                className="form-control"
+                                multiple
+                                onChange={uploadMultipleFiles}
+                            />
 
-                    </div>
+                            <div className="row">
+                                {fileArray && fileArray.map((url, index) => (
+                                    <div key={index} className="col-4 mb-2">
+                                        <img className='w-100 h-100' style={{ objectFit: 'cover' }}  src={url} alt="xisobot" />
+                                    </div>
+                                ))}
+                            </div>
 
-                    <div className="col-lg-4">
+                        </div>
 
-                        <label htmlFor="shaxsjshshir2">mas’ul shaxs jshshiri</label>
-                        <input required onChange={e => setpartner_owner_jshshir(e.target.value)} value={partner_owner_jshshir} type="text" id='shaxsjshshir2' className="form-control" />
+                        <div className="col-lg-4">
 
-                    </div>
+                            <label htmlFor="xisobotnumber">Xisobot raqami</label>
+                            <input required onChange={e => setnumber_report(e.target.value)} value={number_report} type="number" id='xisobotnumber' className="form-control" />
 
-                    <div className="col-lg-4">
-
-                        <label htmlFor="shaxsfish2">mas’ul shaxs fish</label>
-                        <input required onChange={e => setpartner_fio(e.target.value)} value={partner_fio} type="text" id='shaxsfish2' className="form-control" />
+                        </div>
 
                     </div>
 

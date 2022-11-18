@@ -33,7 +33,7 @@ const App = () => {
                     <Route path='/control-panel' element={<ControlPanel />} />
                     <Route path='/sales' element={<Sales />} />
 
-                    <Route path='/transactions' element={localStorage.getItem(ECO_USER_TYPE) === '1' ? <Transactions /> : <Transactions1 />} />
+                    <Route path='/transactions' element={localStorage.getItem(ECO_USER_TYPE) === '2' ? <Transactions /> : <Transactions1 />} />
                     {/* <Route path='/transactions-for-partners' element={<Transactions1 />} /> */}
 
                     <Route path='/settings' element={<Settings />} />
