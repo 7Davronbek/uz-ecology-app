@@ -61,7 +61,7 @@ export const LOGIN = (phone, password, navigate) => async (dispatch) => {
                 dispatch(updateAuth({ userType: res.data.role, userToken: res.data.token }))
                 localStorage.setItem(ECO_USER_TOKEN, res.data.token)
                 localStorage.setItem(ECO_USER_TYPE, res.data.role)
-                navigate('/reports', { replace: true })
+                navigate('/control-panel', { replace: true })
             })
             .catch((err) => {
                 if (err.response.status === 406) {
