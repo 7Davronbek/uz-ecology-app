@@ -19,6 +19,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import UserType from './pages/UserType'
 import PhoneVerify from './pages/PhoneVerify'
 import Login from './pages/Login'
+import Transactions1 from './pages/Transactions1'
+import { ECO_USER_TYPE } from './tools/constants'
 
 const App = () => {
     return (
@@ -30,7 +32,10 @@ const App = () => {
                     <Route path='/reports' element={<Reports />} />
                     <Route path='/control-panel' element={<ControlPanel />} />
                     <Route path='/sales' element={<Sales />} />
-                    <Route path='/transactions' element={<Transactions />} />
+
+                    <Route path='/transactions' element={localStorage.getItem(ECO_USER_TYPE) === '1' ? <Transactions /> : <Transactions1 />} />
+                    {/* <Route path='/transactions-for-partners' element={<Transactions1 />} /> */}
+
                     <Route path='/settings' element={<Settings />} />
                     <Route path='/documents' element={<Documents />} />
                     <Route path='/news-detail' element={<NewsDetail />} />

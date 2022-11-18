@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import UserLayout from '../components/user/UserLayout'
 import { API_PATH, CONFIG } from '../tools/constants'
 
-const Transactions = () => {
+const Transactions1 = () => {
     const [number_contract, setnumber_contract] = useState('')
     const [date_contract, setdate_contract] = useState('')
     const [number_akt, setnumber_akt] = useState('')
@@ -54,7 +54,7 @@ const Transactions = () => {
     }
 
     return (
-        <div className='Transactions inputsStyle'>
+        <div className='Transactions Transactions1 inputsStyle'>
             <UserLayout>
                 <h1>Bitimlar</h1>
                 <h2>Daraxt ekilganligi to’g’risida onlayn AKT (sizning ma’lumotlaringiz)</h2>
@@ -165,4 +165,4 @@ const Transactions = () => {
     )
 }
 
-export default Transactions
+export default Transactions1
