@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import UserLayout from '../components/user/UserLayout'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GOOGLE_KEY } from '../tools/constants';
 
 const Reports = () => {
 
@@ -15,7 +16,7 @@ const Reports = () => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: 'AIzaSyAkkKvMyf8Tk3Q8s7MWXin6njbtjIjq2S4',
+        googleMapsApiKey: GOOGLE_KEY,
     });
 
     const onMapClick = (e) => {

@@ -1,12 +1,64 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import UserLayout from '../components/user/UserLayout'
+import { API_PATH, CONFIG } from '../tools/constants'
 
 const Sales = () => {
+    const [catchRegion, setCatchRegion] = useState('')
+    const [catchTreeClass, setCatchTreeClass] = useState('')
+
+    const getRegions = async () => {
+        await axios.get(API_PATH + '/trades/region/', CONFIG)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    const getDistricts = async () => {
+        await axios.get(API_PATH + `/trades/district/?region_id=${catchRegion}`, CONFIG)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    const getTreeClass = async () => {
+        await axios.get(API_PATH + '/trades/tree-classifier/', CONFIG)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    const getTreeType = async () => {
+        await axios.get(API_PATH + `/trades/tree-type/?classifier_id=${catchTreeClass}`, CONFIG)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    useEffect(() => {
+        getRegions()
+        getDistricts()
+        getTreeClass()
+        getTreeType()
+    }, [])
+
     return (
         <div className='Sales inputsStyle'>
             <UserLayout>
                 <h1>Savdolar</h1>
-                <h2>Ekiluvchi daraxt turi va xududini tanlang</h2>
+                {/* <h2>Ekiluvchi daraxt turi va xududini tanlang</h2> */}
 
                 <div className="row">
 
@@ -39,11 +91,7 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="soni">daraxt soni</label>
-                        <select name="" id="soni" >
-                            <option value=""></option>
-                            <option value="Place">Some place</option>
-                            <option value="Place">Some place</option>
-                        </select>
+                        <input type="number" id='soni' className="form-control" />
 
                     </div>
 
