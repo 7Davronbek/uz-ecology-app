@@ -97,6 +97,9 @@ const Reports = () => {
     const [image2, setImage2] = useState('')
     const [image3, setImage3] = useState('')
 
+    const [number_report, setnumber_report] = useState('')
+    const [districts, setdistricts] = useState('')
+
     const reports = async (e) => {
         setLoader(true)
         e.preventDefault()
@@ -111,11 +114,16 @@ const Reports = () => {
         formData.append('type_tree', type_tree)
         formData.append('count_tree', count_tree)
         formData.append('phone', phone)
+        formData.append('number_report', number_report)
+        formData.append('district', districts)
 
         formData.append('image', image)
         formData.append('image1', image1)
         formData.append('image2', image2)
         formData.append('image3', image3)
+
+        formData.append('latitude', center.lat.toString().slice(0, 9))
+        formData.append('longitude', center.lng.toString().slice(0, 9))
 
 
         await axios.post(API_PATH + `/reports/report/`, formData, CONFIG)
@@ -130,6 +138,8 @@ const Reports = () => {
                 settype_tree('')
                 setcount_tree('')
                 setphone('')
+                setnumber_report('')
+                setdistricts('')
 
                 setImage('')
                 setImage1('')
@@ -315,7 +325,7 @@ const Reports = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="xisobotraqami">Xisobot raqami</label>
-                            <input type="text" id='xisobotraqami' className="form-control" />
+                            <input onChange={e => setnumber_report(e.target.value)} value={number_report} type="text" id='xisobotraqami' className="form-control" />
 
                         </div>
 
@@ -334,7 +344,7 @@ const Reports = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="tuman">TUMANNI TANLANG</label>
-                            <select disabled={getLoader} name="" id="tuman" >
+                            <select onChange={e => setdistricts(e.target.value)} disabled={getLoader} name="" id="tuman" >
                                 <option value=""></option>
                                 {district && district.map((item, index) => (
                                     <option key={index} value={item.id}>{item.name}</option>
