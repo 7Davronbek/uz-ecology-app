@@ -194,9 +194,9 @@ const Transactions1 = () => {
                                         accept='image/png, image/jpg, image/jpeg, image/webp'
                                         onChange={e => setImage(e.target.files[0])}
                                     />
-                                    <label htmlFor="xisobot"><img src="assets/icon/document.svg" alt="" /></label>
+                                    <label className='cursor' htmlFor="xisobot"><img src="assets/icon/document.svg" alt="" /></label>
 
-                                    {image && <label className='image' htmlFor='xisobot'>{image.name}</label>}
+                                    {image && <label className='image cursor' htmlFor='xisobot'>{image.name}</label>}
                                 </div>
                                 <div className="col-lg-6">
 
@@ -207,9 +207,9 @@ const Transactions1 = () => {
                                         accept='image/png, image/jpg, image/jpeg, image/webp'
                                         onChange={e => setImage1(e.target.files[0])}
                                     />
-                                    <label htmlFor="xisobot1"><img src="assets/icon/document.svg" alt="" /></label>
+                                    <label className='cursor' htmlFor="xisobot1"><img src="assets/icon/document.svg" alt="" /></label>
 
-                                    {image1 && <label className='image' htmlFor='xisobot1'>{image1.name}</label>}
+                                    {image1 && <label className='image cursor' htmlFor='xisobot1'>{image1.name}</label>}
                                 </div>
                                 <div className="col-lg-6">
 
@@ -220,9 +220,9 @@ const Transactions1 = () => {
                                         accept='image/png, image/jpg, image/jpeg, image/webp'
                                         onChange={e => setImage2(e.target.files[0])}
                                     />
-                                    <label htmlFor="xisobot2"><img src="assets/icon/document.svg" alt="" /></label>
+                                    <label className='cursor' htmlFor="xisobot2"><img src="assets/icon/document.svg" alt="" /></label>
 
-                                    {image2 && <label className='image' htmlFor='xisobot2'>{image2.name}</label>}
+                                    {image2 && <label className='image cursor' htmlFor='xisobot2'>{image2.name}</label>}
                                 </div>
                                 <div className="col-lg-6">
 
@@ -233,9 +233,9 @@ const Transactions1 = () => {
                                         accept='image/png, image/jpg, image/jpeg, image/webp'
                                         onChange={e => setImage3(e.target.files[0])}
                                     />
-                                    <label htmlFor="xisobot3"><img src="assets/icon/document.svg" alt="" /></label>
+                                    <label className='cursor' htmlFor="xisobot3"><img src="assets/icon/document.svg" alt="" /></label>
 
-                                    {image3 && <label className='image' htmlFor='xisobot3'>{image3.name}</label>}
+                                    {image3 && <label className='image cursor' htmlFor='xisobot3'>{image3.name}</label>}
                                 </div>
 
                             </div>

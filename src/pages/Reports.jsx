@@ -40,7 +40,7 @@ const Reports = () => {
                         <label htmlFor="stir">tASHkilot stiri</label>
                         <input type="text" id='stir' className="form-control" />
 
-                        <button className="btn myBtn mb-4">Yuborish</button>
+                        {/* <button className="btn myBtn mb-4">Yuborish</button> */}
                     </div>
                 </div>
 

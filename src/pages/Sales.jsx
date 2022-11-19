@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import UserLayout from '../components/user/UserLayout'
 import { API_PATH, CONFIG, GOOGLE_KEY } from '../tools/constants'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { toast } from 'react-toastify';
 
 const Sales = () => {
     const [catchRegion, setCatchRegion] = useState('')
@@ -105,16 +106,20 @@ const Sales = () => {
     const [contract_date, setcontract_date] = useState('')
     const [delivery_company, setdelivery_company] = useState('')
     const [contract_file, setcontract_file] = useState('')
+    console.log(contract_file);
+
+    const [loader, setLoader] = useState(false)
 
     const trades = async (e) => {
+        setLoader(true)
         e.preventDefault()
         const formData = new FormData()
 
         formData.append('type_tree', type_tree)
         formData.append('count_tree', count_tree)
         formData.append('district', districts)
-        formData.append('latitude', center.lat.toString().slice(0,9))
-        formData.append('longitude', center.lng.toString().slice(0,9))
+        formData.append('latitude', center.lat.toString().slice(0, 9))
+        formData.append('longitude', center.lng.toString().slice(0, 9))
         formData.append('contract_number', contract_number)
         formData.append('contract_date', contract_date)
         formData.append('delivery_company', delivery_company)
@@ -123,10 +128,19 @@ const Sales = () => {
 
         await axios.post(API_PATH + `/trades/trade/`, formData, CONFIG)
             .then((res) => {
-                console.log(res);
+                toast.success('Success!')
+                settype_tree('')
+                setcount_tree('')
+                setdistricts('')
+                setcontract_number('')
+                setcontract_date('')
+                setdelivery_company('')
+                setcontract_file('')
+                setLoader(false)
             })
             .catch((err) => {
-                console.log(err);
+                setLoader(false)
+                toast.error("Error! Something went wrong")
             })
     }
 
@@ -179,7 +193,7 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="soni">daraxt soni</label>
-                        <input value={count_tree} onChange={e => setcount_tree(e.target.value)} type="number" id='soni' className="form-control" />
+                        <input required  value={count_tree} onChange={e => setcount_tree(e.target.value)} type="number" id='soni' className="form-control" />
 
                     </div>
 
@@ -235,22 +249,25 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="raqam">shartnoma raqami</label>
-                        <input onChange={e => setcontract_number(e.target.value)} value={contract_number} type="number" id='raqam' className="form-control" />
+                        <input required  onChange={e => setcontract_number(e.target.value)} value={contract_number} type="number" id='raqam' className="form-control" />
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="xisobot">shartnoma sanasi</label>
-                        <input onChange={e => setcontract_date(e.target.value)} value={contract_date} type="date" id='xisobot' className="form-control" />
+                        <input required  onChange={e => setcontract_date(e.target.value)} value={contract_date} type="date" id='xisobot' className="form-control" />
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="xisobotraqami">shartnomani yuklash</label>
-                        <input onChange={e => setcontract_file(e.target.files[0])} type="file" id='xisobotraqami' className="form-control d-none" />
-                        <label className='d-block' htmlFor="xisobotraqami"><img src="assets/icon/document.svg" alt="" /></label>
+                        <input required  onChange={e => setcontract_file(e.target.files[0])} type="file" id='xisobotraqami' className="form-control d-none" />
+                        <div className="d-flex align-items-center">
+                            <label className='d-block me-2 cursor' htmlFor="xisobotraqami"><img src="assets/icon/document.svg" alt="" /></label>
+                            {contract_file && <label className='cursor'>{contract_file.name}</label>}
+                        </div>
 
                     </div>
 
@@ -267,7 +284,7 @@ const Sales = () => {
                     </div>
 
                     <div className="col-lg-4 col-md-6 ms-auto mt-5 myBtnP">
-                        <button type='submit' className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
+                        <button disabled={loader} type='submit' className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
                     </div>
 
                 </form>
