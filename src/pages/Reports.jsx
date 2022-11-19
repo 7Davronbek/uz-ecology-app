@@ -28,6 +28,16 @@ const Reports = () => {
         });
     };
 
+    const gets = () => {
+        axios.get(API_PATH + '/reports/docs/', CONFIG)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
     const [catchRegion, setCatchRegion] = useState('')
     const [catchTreeClass, setCatchTreeClass] = useState('')
 
@@ -128,7 +138,6 @@ const Reports = () => {
 
         await axios.post(API_PATH + `/reports/report/`, formData, CONFIG)
             .then((res) => {
-                console.log(res);
                 setcompany_stir('')
                 setcompany_name('')
                 setowner_fio('')
@@ -161,6 +170,7 @@ const Reports = () => {
         getDistricts()
         getTreeClass()
         getTreeType()
+        // gets()
     }, [getDistricts, getTreeType])
 
     return (
