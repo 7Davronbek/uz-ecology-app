@@ -80,10 +80,10 @@ const Sales = () => {
     }
 
     useEffect(() => {
-        // getRegions()
-        // getDistricts()
-        // getTreeClass()
-        // getTreeType()
+        getRegions()
+        getDistricts()
+        getTreeClass()
+        getTreeType()
         drawMaker()
     }, [])
 

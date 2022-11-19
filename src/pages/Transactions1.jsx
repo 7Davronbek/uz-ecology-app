@@ -17,37 +17,42 @@ const Transactions1 = () => {
     const [number_report, setnumber_report] = useState('')
     const [description, setdescription] = useState('')
 
-    const [fileObj, setFileObj] = useState([])
-    const [fileArray, setFileArray] = useState([])
-    const [file, setFile] = useState([])
+    const [image, setImage] = useState('')
+    const [image1, setImage1] = useState('')
+    const [image2, setImage2] = useState('')
+    const [image3, setImage3] = useState('')
 
-    const [selectedImages, setSelectedImages] = useState([])
-    const [selectedImages2, setSelectedImages2] = useState([])
+    // const [fileObj, setFileObj] = useState([])
+    // const [fileArray, setFileArray] = useState([])
+    // const [file, setFile] = useState([])
 
-    const onSelectFile = (e) => {
-        const selectedFiles = e.target.files
-        const selectedFilesArray = Array.from(selectedFiles)
-        console.log(...selectedFiles);
+    // const [selectedImages, setSelectedImages] = useState([])
+    // const [selectedImages2, setSelectedImages2] = useState([])
 
-        const imageArray = selectedFilesArray.map((file) => {
-            return URL.createObjectURL(file)
-        })
+    // const onSelectFile = (e) => {
+    //     const selectedFiles = e.target.files
+    //     const selectedFilesArray = Array.from(selectedFiles)
+    //     console.log(...selectedFiles);
 
-        setSelectedImages(imageArray)
-        setSelectedImages2(...selectedFiles)
-    }
+    //     const imageArray = selectedFilesArray.map((file) => {
+    //         return URL.createObjectURL(file)
+    //     })
 
-    const uploadMultipleFiles = (e) => {
-        fileObj.push(e.target.files)
-        for (let i = 0; i < fileObj[0].length; i++) {
-            fileArray.push(URL.createObjectURL(fileObj[0][i]))
-        }
-        const arr = Array.from(fileArray)
-        console.log(arr);
-        setFile(arr)
-        console.log(file);
+    //     setSelectedImages(imageArray)
+    //     setSelectedImages2(...selectedFiles)
+    // }
 
-    }
+    // const uploadMultipleFiles = (e) => {
+    //     fileObj.push(e.target.files)
+    //     for (let i = 0; i < fileObj[0].length; i++) {
+    //         fileArray.push(URL.createObjectURL(fileObj[0][i]))
+    //     }
+    //     const arr = Array.from(fileArray)
+    //     console.log(arr);
+    //     setFile(arr)
+    //     console.log(file);
+
+    // }
 
     const [loading, setLoading] = useState(false)
 
@@ -66,15 +71,32 @@ const Transactions1 = () => {
         formData.append('owner_fio', owner_fio)
         formData.append('phone', phone)
         formData.append('number_report', number_report)
-        formData.append('contracts_images', selectedImages2)
+
+        formData.append('image', image)
+        formData.append('image1', image1)
+        formData.append('image2', image2)
+        formData.append('image3', image3)
 
         formData.append('description', description)
 
         await axios.post(API_PATH + '/contracts/contract/', formData, CONFIG)
             .then((res) => {
-                console.log(res);
                 setLoading(false)
                 toast.success('Success!')
+
+                setnumber_akt('')
+                setdate_contract('')
+                setnumber_akt('')
+                setdate_akt('')
+                setcompany_stir('')
+                setowner_fio('')
+                setowner_jshshir('')
+                setphone('')
+                setnumber_report('')
+                setImage('')
+                setImage1('')
+                setImage2('')
+                setImage3('')
             })
             .catch((err) => {
                 setLoading(false)
@@ -159,30 +181,86 @@ const Transactions1 = () => {
 
                         <div className="col-lg-4">
 
-                            <label htmlFor="xisobot">Foto xisobot</label>
-                            <input
+                            <label>Foto xisobot</label>
+                            <div className="row">
+                                <div className="col-lg-6">
+
+                                    <input
+                                        type="file"
+                                        id='xisobot'
+                                        name='xisobot'
+                                        autoFocus
+                                        className={`form-control  d-none`}
+                                        accept='image/png, image/jpg, image/jpeg, image/webp'
+                                        onChange={e => setImage(e.target.files[0])}
+                                    />
+                                    <label htmlFor="xisobot"><img src="assets/icon/document.svg" alt="" /></label>
+
+                                    {image && <label className='image' htmlFor='xisobot'>{image.name}</label>}
+                                </div>
+                                <div className="col-lg-6">
+
+                                    <input
+                                        type="file"
+                                        id='xisobot1'
+                                        className={`form-control d-none`}
+                                        accept='image/png, image/jpg, image/jpeg, image/webp'
+                                        onChange={e => setImage1(e.target.files[0])}
+                                    />
+                                    <label htmlFor="xisobot1"><img src="assets/icon/document.svg" alt="" /></label>
+
+                                    {image1 && <label className='image' htmlFor='xisobot1'>{image1.name}</label>}
+                                </div>
+                                <div className="col-lg-6">
+
+                                    <input
+                                        type="file"
+                                        id='xisobot2'
+                                        className={`form-control  d-none`}
+                                        accept='image/png, image/jpg, image/jpeg, image/webp'
+                                        onChange={e => setImage2(e.target.files[0])}
+                                    />
+                                    <label htmlFor="xisobot2"><img src="assets/icon/document.svg" alt="" /></label>
+
+                                    {image2 && <label className='image' htmlFor='xisobot2'>{image2.name}</label>}
+                                </div>
+                                <div className="col-lg-6">
+
+                                    <input
+                                        type="file"
+                                        id='xisobot3'
+                                        className={`form-control  d-none`}
+                                        accept='image/png, image/jpg, image/jpeg, image/webp'
+                                        onChange={e => setImage3(e.target.files[0])}
+                                    />
+                                    <label htmlFor="xisobot3"><img src="assets/icon/document.svg" alt="" /></label>
+
+                                    {image3 && <label className='image' htmlFor='xisobot3'>{image3.name}</label>}
+                                </div>
+
+                            </div>
+                            {/* <input
                                 type="file"
                                 id='xisobot'
                                 className="form-control"
                                 multiple
                                 accept='image/png, image/jpg, image/jpeg, image/webp'
                                 onChange={onSelectFile}
-                            // onChange={uploadMultipleFiles}
-                            />
-
+                            /> */}
+                            {/* 
                             <div className="row">
-                                {/* {selectedImages && selectedImages.map((item, index) => (
+                                {selectedImages && selectedImages.map((item, index) => (
                                     <div key={index} className="col-4 mb-2">
                                         <img className='w-100 h-100' style={{ objectFit: 'cover' }} src={item} alt="xisobot" />
                                         <div onClick={() => setSelectedImages(selectedImages.filter((e) => e !== item))}>delete</div>
                                     </div>
-                                ))} */}
+                                ))}
                                 {fileArray && fileArray.map((url, index) => (
                                     <div key={index} className="col-4 mb-2">
                                         <img className='w-100 h-100' style={{ objectFit: 'cover' }}  src={url} alt="xisobot" />
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
 
                         </div>
 
