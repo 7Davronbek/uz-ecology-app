@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import UserLayout from '../components/user/UserLayout'
 import { API_PATH, CONFIG, GOOGLE_KEY } from '../tools/constants'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
@@ -7,6 +7,12 @@ import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 const Sales = () => {
     const [catchRegion, setCatchRegion] = useState('')
     const [catchTreeClass, setCatchTreeClass] = useState('')
+
+    const [classifier, setClassifier] = useState([])
+    const [treeTypes, setTreeTypes] = useState([])
+    const [region, setRegion] = useState([])
+    const [district, setDistrict] = useState([])
+    const [companies, setCompanies] = useState([])
 
     const [center, setCenter] = useState({
         lat: 41.3127,
@@ -17,15 +23,15 @@ const Sales = () => {
         height: '100%',
     };
 
-    const drawMaker = () => {
+
+    const drawMaker = useCallback(() => {
         return <Marker position={{
             lat: center.lat,
             lng: center.lng
         }}
 
             onClick={() => console.log("Event Hanlder Called")} />
-
-    }
+    }, [center.lat, center.lng]);
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -42,50 +48,63 @@ const Sales = () => {
     const getRegions = async () => {
         await axios.get(API_PATH + '/trades/region/', CONFIG)
             .then((res) => {
-                console.log(res);
+                setRegion(res.data)
             })
             .catch((err) => {
                 console.log(err);
             })
     }
 
-    const getDistricts = async () => {
+    const getDistricts = useCallback(async () => {
         await axios.get(API_PATH + `/trades/district/?region_id=${catchRegion}`, CONFIG)
             .then((res) => {
-                console.log(res);
+                setDistrict(res.data)
             })
             .catch((err) => {
                 console.log(err);
             })
-    }
+    }, [catchRegion]);
 
     const getTreeClass = async () => {
         await axios.get(API_PATH + '/trades/tree-classifier/', CONFIG)
             .then((res) => {
-                console.log(res);
+                setClassifier(res.data)
             })
             .catch((err) => {
                 console.log(err);
             })
     }
 
-    const getTreeType = async () => {
+    const getTreeType = useCallback(async () => {
         await axios.get(API_PATH + `/trades/tree-type/?classifier_id=${catchTreeClass}`, CONFIG)
             .then((res) => {
-                console.log(res);
+                setTreeTypes(res.data)
             })
             .catch((err) => {
                 console.log(err);
             })
-    }
+    }, [catchTreeClass]);
+
+    const getCompanies = useCallback(async () => {
+        await axios.get(API_PATH + `/trades/delivery-company/?region_id=${catchRegion}`, CONFIG)
+            .then((res) => {
+                setCompanies(res.data)
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, [catchRegion]);
+
+
 
     useEffect(() => {
         getRegions()
         getDistricts()
         getTreeClass()
         getTreeType()
+        getCompanies()
         drawMaker()
-    }, [])
+    }, [getDistricts, drawMaker, getTreeType, getCompanies])
 
     return (
         <div className='Sales inputsStyle'>
@@ -102,10 +121,11 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="klassifikator">Daraxt klassifikatorini tanlang   </label>
-                        <select name="" id="klassifikator" >
+                        <select onChange={e => setCatchTreeClass(e.target.value)} name="" id="klassifikator" >
                             <option value=""></option>
-                            <option value="Place">Some place</option>
-                            <option value="Place">Some place</option>
+                            {classifier && classifier.map((item, index) => (
+                                <option key={index} value={item.id}>{item.name}</option>
+                            ))}
                         </select>
 
                     </div>
@@ -115,8 +135,9 @@ const Sales = () => {
                         <label htmlFor="turi">Daraxt turini tanlang</label>
                         <select name="" id="turi" >
                             <option value=""></option>
-                            <option value="Place">Some place</option>
-                            <option value="Place">Some place</option>
+                            {treeTypes && treeTypes.map((item, index) => (
+                                <option key={index} value={item.id}>{item.name}</option>
+                            ))}
                         </select>
 
                     </div>
@@ -131,10 +152,11 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="xudud">XUDUDNI TANLANG</label>
-                        <select name="" id="xudud" >
+                        <select onChange={(e) => setCatchRegion(e.target.value)} name="" id="xudud" >
                             <option value=""></option>
-                            <option value="Place">Some place</option>
-                            <option value="Place">Some place</option>
+                            {region && region.map((item, index) => (
+                                <option key={index} value={item.id}>{item.name}</option>
+                            ))}
                         </select>
 
                     </div>
@@ -144,8 +166,9 @@ const Sales = () => {
                         <label htmlFor="tuman">TUMANNI TANLANG</label>
                         <select name="" id="tuman" >
                             <option value=""></option>
-                            <option value="Place">Some place</option>
-                            <option value="Place">Some place</option>
+                            {district && district.map((item, index) => (
+                                <option key={index} value={item.id}>{item.name}</option>
+                            ))}
                         </select>
 
                     </div>
@@ -201,8 +224,9 @@ const Sales = () => {
                         <label htmlFor="yetkazib">daraxt yetkazib beruvchi tashkilot</label>
                         <select name="" id="yetkazib" >
                             <option value=""></option>
-                            <option value="Place">Some place</option>
-                            <option value="Place">Some place</option>
+                            {companies && companies.map((item, index) => (
+                                <option key={index} value={item.id}>{item.name}</option>
+                            ))}
                         </select>
 
                     </div>
