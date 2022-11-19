@@ -14,6 +14,10 @@ const Sales = () => {
     const [district, setDistrict] = useState([])
     const [companies, setCompanies] = useState([])
 
+    const [getLoader, setGetLoader] = useState(true)
+    const [treeLoader, setTreeLoader] = useState(true)
+
+
     const [center, setCenter] = useState({
         lat: 41.3127,
         lng: 69.2785,
@@ -22,7 +26,6 @@ const Sales = () => {
         width: '100%',
         height: '100%',
     };
-
 
     const drawMaker = useCallback(() => {
         return <Marker position={{
@@ -95,6 +98,38 @@ const Sales = () => {
             })
     }, [catchRegion]);
 
+    const [type_tree, settype_tree] = useState('')
+    const [count_tree, setcount_tree] = useState('')
+    const [districts, setdistricts] = useState('')
+    const [contract_number, setcontract_number] = useState('')
+    const [contract_date, setcontract_date] = useState('')
+    const [delivery_company, setdelivery_company] = useState('')
+    const [contract_file, setcontract_file] = useState('')
+
+    const trades = async (e) => {
+        e.preventDefault()
+        const formData = new FormData()
+
+        formData.append('type_tree', type_tree)
+        formData.append('count_tree', count_tree)
+        formData.append('district', districts)
+        formData.append('latitude', center.lat.toString().slice(0,9))
+        formData.append('longitude', center.lng.toString().slice(0,9))
+        formData.append('contract_number', contract_number)
+        formData.append('contract_date', contract_date)
+        formData.append('delivery_company', delivery_company)
+        formData.append('contract_file', contract_file)
+
+
+        await axios.post(API_PATH + `/trades/trade/`, formData, CONFIG)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
 
 
     useEffect(() => {
@@ -110,9 +145,8 @@ const Sales = () => {
         <div className='Sales inputsStyle'>
             <UserLayout>
                 <h1>Savdolar</h1>
-                {/* <h2>Ekiluvchi daraxt turi va xududini tanlang</h2> */}
 
-                <div className="row">
+                <form onSubmit={trades} className="row">
 
                     <div className="col-12">
                         <h2>Ekiluvchi daraxt turi va xududini tanlang</h2>
@@ -121,7 +155,7 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="klassifikator">Daraxt klassifikatorini tanlang   </label>
-                        <select onChange={e => setCatchTreeClass(e.target.value)} name="" id="klassifikator" >
+                        <select onChange={e => { setCatchTreeClass(e.target.value); setTreeLoader(false) }} name="" id="klassifikator" >
                             <option value=""></option>
                             {classifier && classifier.map((item, index) => (
                                 <option key={index} value={item.id}>{item.name}</option>
@@ -133,7 +167,7 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="turi">Daraxt turini tanlang</label>
-                        <select name="" id="turi" >
+                        <select onChange={e => settype_tree(e.target.value)} disabled={treeLoader} name="" id="turi" >
                             <option value=""></option>
                             {treeTypes && treeTypes.map((item, index) => (
                                 <option key={index} value={item.id}>{item.name}</option>
@@ -145,14 +179,14 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="soni">daraxt soni</label>
-                        <input type="number" id='soni' className="form-control" />
+                        <input value={count_tree} onChange={e => setcount_tree(e.target.value)} type="number" id='soni' className="form-control" />
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="xudud">XUDUDNI TANLANG</label>
-                        <select onChange={(e) => setCatchRegion(e.target.value)} name="" id="xudud" >
+                        <select onChange={(e) => { setCatchRegion(e.target.value); setGetLoader(false) }} name="" id="xudud" >
                             <option value=""></option>
                             {region && region.map((item, index) => (
                                 <option key={index} value={item.id}>{item.name}</option>
@@ -164,7 +198,7 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="tuman">TUMANNI TANLANG</label>
-                        <select name="" id="tuman" >
+                        <select onChange={e => setdistricts(e.target.value)} disabled={getLoader} name="" id="tuman" >
                             <option value=""></option>
                             {district && district.map((item, index) => (
                                 <option key={index} value={item.id}>{item.name}</option>
@@ -201,28 +235,29 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="raqam">shartnoma raqami</label>
-                        <input type="number" id='raqam' className="form-control" />
+                        <input onChange={e => setcontract_number(e.target.value)} value={contract_number} type="number" id='raqam' className="form-control" />
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="xisobot">shartnoma sanasi</label>
-                        <input type="date" id='xisobot' className="form-control" />
+                        <input onChange={e => setcontract_date(e.target.value)} value={contract_date} type="date" id='xisobot' className="form-control" />
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="xisobotraqami">shartnomani yuklash</label>
-                        <input type="file" id='xisobotraqami' className="form-control" />
+                        <input onChange={e => setcontract_file(e.target.files[0])} type="file" id='xisobotraqami' className="form-control d-none" />
+                        <label className='d-block' htmlFor="xisobotraqami"><img src="assets/icon/document.svg" alt="" /></label>
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="yetkazib">daraxt yetkazib beruvchi tashkilot</label>
-                        <select name="" id="yetkazib" >
+                        <select onChange={e => setdelivery_company(e.target.value)} disabled={getLoader} name="" id="yetkazib" >
                             <option value=""></option>
                             {companies && companies.map((item, index) => (
                                 <option key={index} value={item.id}>{item.name}</option>
@@ -232,10 +267,10 @@ const Sales = () => {
                     </div>
 
                     <div className="col-lg-4 col-md-6 ms-auto mt-5 myBtnP">
-                        <button className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
+                        <button type='submit' className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
                     </div>
 
-                </div>
+                </form>
             </UserLayout>
         </div>
     )

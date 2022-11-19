@@ -68,6 +68,7 @@ export const LOGIN = (phone, password, navigate) => async (dispatch) => {
                 localStorage.setItem(ECO_USER_TOKEN, res.data.token)
                 localStorage.setItem(ECO_USER_TYPE, res.data.role)
                 navigate('/control-panel', { replace: true })
+                window.location.reload();
             })
             .catch((err) => {
                 if (err.response.status === 406) {
