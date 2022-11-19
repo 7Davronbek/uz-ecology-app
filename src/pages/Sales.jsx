@@ -106,7 +106,6 @@ const Sales = () => {
     const [contract_date, setcontract_date] = useState('')
     const [delivery_company, setdelivery_company] = useState('')
     const [contract_file, setcontract_file] = useState('')
-    console.log(contract_file);
 
     const [loader, setLoader] = useState(false)
 
@@ -136,6 +135,8 @@ const Sales = () => {
                 setcontract_date('')
                 setdelivery_company('')
                 setcontract_file('')
+                setCatchRegion('')
+                setCatchTreeClass('')
                 setLoader(false)
             })
             .catch((err) => {
@@ -193,7 +194,7 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="soni">daraxt soni</label>
-                        <input required  value={count_tree} onChange={e => setcount_tree(e.target.value)} type="number" id='soni' className="form-control" />
+                        <input required value={count_tree} onChange={e => setcount_tree(e.target.value)} type="number" id='soni' className="form-control" />
 
                     </div>
 
@@ -249,21 +250,21 @@ const Sales = () => {
                     <div className="col-lg-4">
 
                         <label htmlFor="raqam">shartnoma raqami</label>
-                        <input required  onChange={e => setcontract_number(e.target.value)} value={contract_number} type="number" id='raqam' className="form-control" />
+                        <input required onChange={e => setcontract_number(e.target.value)} value={contract_number} type="number" id='raqam' className="form-control" />
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="xisobot">shartnoma sanasi</label>
-                        <input required  onChange={e => setcontract_date(e.target.value)} value={contract_date} type="date" id='xisobot' className="form-control" />
+                        <input required onChange={e => setcontract_date(e.target.value)} value={contract_date} type="date" id='xisobot' className="form-control" />
 
                     </div>
 
                     <div className="col-lg-4">
 
                         <label htmlFor="xisobotraqami">shartnomani yuklash</label>
-                        <input required  onChange={e => setcontract_file(e.target.files[0])} type="file" id='xisobotraqami' className="form-control d-none" />
+                        <input required onChange={e => setcontract_file(e.target.files[0])} type="file" id='xisobotraqami' className="form-control d-none" />
                         <div className="d-flex align-items-center">
                             <label className='d-block me-2 cursor' htmlFor="xisobotraqami"><img src="assets/icon/document.svg" alt="" /></label>
                             {contract_file && <label className='cursor'>{contract_file.name}</label>}
