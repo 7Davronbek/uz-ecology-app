@@ -28,16 +28,6 @@ const Reports = () => {
         });
     };
 
-    const gets = () => {
-        axios.get(API_PATH + '/reports/docs/', CONFIG)
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
-
     const [catchRegion, setCatchRegion] = useState('')
     const [catchTreeClass, setCatchTreeClass] = useState('')
 
@@ -174,7 +164,7 @@ const Reports = () => {
     }, [getDistricts, getTreeType])
 
     return (
-        <div className='Reports inputsStyle'>
+        <div className='Reports inputsStyle '>
             <UserLayout>
 
                 <h1>Xisobotlar</h1>

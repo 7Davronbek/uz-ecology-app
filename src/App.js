@@ -34,7 +34,6 @@ const App = () => {
                     <Route path='/sales' element={<Sales />} />
 
                     <Route path='/transactions' element={localStorage.getItem(ECO_USER_TYPE) === '1' ? <Transactions /> : <Transactions1 />} />
-                    {/* <Route path='/transactions-for-partners' element={<Transactions1 />} /> */}
 
                     <Route path='/settings' element={<Settings />} />
                     <Route path='/documents' element={<Documents />} />
