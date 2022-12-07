@@ -118,6 +118,10 @@ body {
             align-items: center;
             justify-content: center;
 
+            .nav_box_icon {
+                transition: all 0.2s ease-in-out;
+            }
+
             .nav_box_up {
                 margin-left: 30px;
                 cursor: pointer;
@@ -137,7 +141,6 @@ body {
                     }
 
                     .nav_box_icon {
-                        transition: 0.4s;
                         transform: rotate(180deg);
                     }
                 }
