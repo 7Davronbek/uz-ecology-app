@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import UserLayout from '../components/user/UserLayout'
+import { useDispatch, useSelector } from 'react-redux';
+import { ALLREPORTS } from '../redux/actions/tradesAction';
 
 const Documents = () => {
+    const { allReports, isLoading } = useSelector(state => state.trades)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(ALLREPORTS())
+    }, []);
+
     return (
         <div className='Documents'>
             <UserLayout>
@@ -37,7 +46,43 @@ const Documents = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {isLoading && <>
+                            <tr>
+                                <th><input type="checkbox" name="" className='' id="" /></th>
+                                <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/blue.svg" alt="" /> loading...</span></th>
+                                <th>
+                                    <h5>loading...</h5>
+                                    <h6>loading...</h6>
+                                </th>
+                                <th>
+                                    <h4>loading...</h4>
+                                    <h3>loading...</h3>
+                                </th>
+                                <th>
+                                    <p>loading...</p>
+                                </th>
+                            </tr>
+                        </>}
+                        {/* {allReports && allReports.map((item, index) => (
+                            <>
+                                <tr>
+                                    <th><input type="checkbox" name="" className='' id="" /></th>
+                                    <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/blue.svg" alt="" /> 20.05.2022</span></th>
+                                    <th>
+                                        <h5>12.11.2022</h5>
+                                        <h6>Erkin hujjat</h6>
+                                    </th>
+                                    <th>
+                                        <h4>“BUSINESS SUPPLY” XK</h4>
+                                        <h3>309 771 768</h3>
+                                    </th>
+                                    <th>
+                                        <p>12.05.2022 dan</p>
+                                    </th>
+                                </tr>
+                            </>
+                        ))} */}
+                        {/* <tr>
                             <th><input type="checkbox" name="" className='' id="" /></th>
                             <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/blue.svg" alt="" /> 20.05.2022</span></th>
                             <th>
@@ -111,7 +156,7 @@ const Documents = () => {
                             <th>
                                 <p>12.05.2022 dan</p>
                             </th>
-                        </tr>
+                        </tr> */}
                     </tbody>
                 </table>
             </UserLayout>

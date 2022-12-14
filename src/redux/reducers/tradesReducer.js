@@ -3,6 +3,7 @@ import { UPDATE_TRADES } from "../types/type"
 const initialStore = {
     isLoading: false,
     error: false,
+    allReports: []
 }
 
 export const tradesReducer = (state = initialStore, action) => {
