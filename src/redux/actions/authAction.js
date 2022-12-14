@@ -25,7 +25,6 @@ export const REGISTER = (role, phone, password, navigate) => async (dispatch) =>
     formData.append('phone', phone)
     formData.append('role', role)
     formData.append('password', password)
-    console.log(role);
     await axios.post(API_PATH + '/accounts/register/', formData, CONFIG)
         .then((res) => {
             if (res.status === 409) {

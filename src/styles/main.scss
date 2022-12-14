@@ -28,6 +28,11 @@ $green: #3E975B;
         mask-image: url("../images/file.svg");
         -webkit-mask-image: url("../images/file.svg");
     }
+
+    &.icon-setting {
+        mask-image: url("../images/settings.svg");
+        -webkit-mask-image: url("../images/settings.svg");
+    }
 }
 
 body {

@@ -117,6 +117,7 @@ const UserLayout = (props) => {
 
                     <h6 className={`last ${location.pathname === '/documents' ? 'active' : ''}`}><Link to='/documents'><span className='icon icon-file'></span> Hujjatlar </Link></h6>
                     <h6 className={`last ${location.pathname === '/reports' ? 'active' : ''}`}><Link to='/reports'><span className='icon icon-info'></span> Xisobotlarim </Link></h6>
+                    <h6 className={`last ${location.pathname === '/settings' ? 'active' : ''}`}><Link to='/settings'><span className='icon icon-setting'></span> Sozlamalar </Link></h6>
 
                 </div>
                 <div className="col-lg-9 px-3 bottomRight">

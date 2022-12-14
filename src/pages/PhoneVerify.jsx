@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import DonateLayout from '../components/user/DonateLayout'
 import { PHONEVERIFY } from '../redux/actions/authAction'
+import InputMask from "react-input-mask";
 
 const PhoneVerify = () => {
     const phone = useSelector(state => state.auth.userPhone)
@@ -38,7 +39,14 @@ const PhoneVerify = () => {
 
 
                             <div className="inputWrap me-3 w-100">
-                                <input value={code} onChange={e => setCode(e.target.value)} placeholder='******' type="number" id='cartNumber' className="form-control last" />
+                                <InputMask
+                                    mask="99999"
+                                    value={code} onChange={e => setCode(e.target.value)} placeholder='******' id='cartNumber' className="form-control last"
+                                    alwaysShowMask={true}
+                                    maskChar="*"
+                                    required='required'
+                                />
+                                {/* <input value={code} onChange={e => setCode(e.target.value)} placeholder='******' type="number" id='cartNumber' className="form-control last" /> */}
                                 <label htmlFor="cartNumber">Tasdiqlash kodini kiriting</label>
                             </div>
 
