@@ -5,10 +5,16 @@ import {
     AccordionHeader,
     AccordionItem,
 } from 'reactstrap';
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { LOGOUT } from '../../redux/actions/authAction';
 
 const UserLayout = (props) => {
     const [open, setOpen] = useState('0');
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const toggle = (id) => {
         if (open === id) {
             setOpen();
@@ -132,7 +138,7 @@ const UserLayout = (props) => {
                         <h6 className={`last ${location.pathname === '/settings' ? 'active' : ''}`}><Link to='/settings'><span className='icon icon-setting'></span> Sozlamalar </Link></h6>
                     </div>
 
-                    <h6 className="logout"><span><img src="assets/icon/logout.svg" alt="" /></span> Chiqish</h6>
+                    <h6 onClick={() => dispatch(LOGOUT(navigate))} className="logout"><span><img src="assets/icon/logout.svg" alt="" /></span> Chiqish</h6>
 
                 </div>
                 <div className="col-lg-9 px-3 bottomRight">

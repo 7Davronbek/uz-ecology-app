@@ -87,3 +87,17 @@ export const LOGIN = (phone, password, navigate) => async (dispatch) => {
             })
     }
 }
+
+// LOGOUT USER
+export const LOGOUT = (navigate) => async (dispatch) => {
+    await axios.delete(API_PATH + '/accounts/logout/', CONFIG)
+        .then((res) => {
+            localStorage.removeItem(ECO_USER_TYPE)
+            localStorage.removeItem(ECO_USER_TOKEN)
+            navigate('/', { replace: true })
+            // toast.success("User o'chirildi.")
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
