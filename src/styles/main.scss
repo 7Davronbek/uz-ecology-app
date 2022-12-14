@@ -33,6 +33,11 @@ $green: #3E975B;
         mask-image: url("../images/settings.svg");
         -webkit-mask-image: url("../images/settings.svg");
     }
+
+    &.icon-home {
+        mask-image: url("../images/home.svg");
+        -webkit-mask-image: url("../images/home.svg");
+    }
 }
 
 body {
@@ -1338,7 +1343,8 @@ body {
                         width: 100%;
                         display: flex;
                         align-items: center;
-                        padding: 12px 0;
+                        // padding: 12px 0;
+                        padding: 12px 0 12px 3px;
 
                         .icon {
                             transition: all .2s ease-in-out;
@@ -1384,6 +1390,10 @@ body {
                 width: 350px;
                 transition: all .5s ease-in-out;
             }
+        }
+
+        .wrapLast {
+            margin-bottom: 20px !important;
         }
     }
 

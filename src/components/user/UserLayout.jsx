@@ -69,19 +69,20 @@ const UserLayout = (props) => {
             <div className='row  userBottom'>
 
                 <div className="col-lg-3 px-3 bottomLeft">
-                    <h6><span><img src="assets/icon/home.svg" alt="" /></span> OOO YASHIL DARAXT</h6>
+                    <h6> OOO YASHIL DARAXT</h6>
 
                     <Accordion className='service__list w-100 border2' open={open} toggle={toggle}>
 
-                        <AccordionItem className='wrap'>
+                        {/* <AccordionItem className='wrap'>
                             <AccordionHeader targetId='1'>
-                                <h5><span><img src="assets/icon/filter.svg" alt="" /></span> Bosh sahifa</h5>
+                                <h5></h5>
                             </AccordionHeader>
                             <AccordionBody accordionId='1'>
                                 <Link className={location.pathname === '/control-panel' ? 'active' : ''} to='/control-panel'>Boshqaruv paneli</Link>
-                                <Link className={location.pathname === '/settings' ? 'active' : ''} to='/settings'>Sozlamalar</Link>
                             </AccordionBody>
-                        </AccordionItem>
+                        </AccordionItem> */}
+                        <h6 className={`last ${location.pathname === '/control-panel' ? 'active' : ''}`}><Link to='/control-panel'><span className='icon icon-home'></span>Bosh sahifa</Link></h6>
+
 
                         <AccordionItem className='wrap'>
                             <AccordionHeader targetId='2'>
@@ -89,7 +90,7 @@ const UserLayout = (props) => {
                             </AccordionHeader>
                             <AccordionBody accordionId='2'>
                                 <Link className={location.pathname === '/sales' ? 'active' : ''} to='/sales'>Savdolar</Link>
-                                <Link className={location.pathname === '/transactions' ? 'active' : ''} to='/transactions'>Bitimlar</Link>
+                                <Link className={location.pathname === '/transactions' ? 'active' : ''} to='/transactions'>Bitimlar va AKTlar</Link>
                             </AccordionBody>
                         </AccordionItem>
 
@@ -113,10 +114,20 @@ const UserLayout = (props) => {
                             </AccordionBody> */}
                         </AccordionItem>
 
+                        <AccordionItem className='wrap wrapLast'>
+                            <AccordionHeader targetId='5'>
+                                <h5><span className='icon icon-file'></span>Hujjatlar </h5>
+                            </AccordionHeader>
+                            <AccordionBody accordionId='5'>
+                                <Link className={` ${location.pathname === '/documents' ? 'active' : ''}`} to='/documents'> Hujjatlar </Link>
+                                <Link className={` ${location.pathname === '/reports' ? 'active' : ''}`} to='/reports'>Xisobotlarim </Link>
+                            </AccordionBody>
+                        </AccordionItem>
+
                     </Accordion>
 
-                    <h6 className={`last ${location.pathname === '/documents' ? 'active' : ''}`}><Link to='/documents'><span className='icon icon-file'></span> Hujjatlar </Link></h6>
-                    <h6 className={`last ${location.pathname === '/reports' ? 'active' : ''}`}><Link to='/reports'><span className='icon icon-info'></span> Xisobotlarim </Link></h6>
+                    {/* <h6 ></h6> */}
+                    {/* <h6 ></h6> */}
                     <h6 className={`last ${location.pathname === '/settings' ? 'active' : ''}`}><Link to='/settings'><span className='icon icon-setting'></span> Sozlamalar </Link></h6>
 
                 </div>
