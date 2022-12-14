@@ -6,6 +6,7 @@ import { ALLREPORTS } from '../redux/actions/tradesAction';
 const Documents = () => {
     const { allReports, isLoading } = useSelector(state => state.trades)
     const dispatch = useDispatch()
+    console.log(allReports[1]);
 
     useEffect(() => {
         dispatch(ALLREPORTS())
@@ -63,100 +64,75 @@ const Documents = () => {
                                 </th>
                             </tr>
                         </>}
-                        {/* {allReports && allReports.map((item, index) => (
-                            <>
-                                <tr>
-                                    <th><input type="checkbox" name="" className='' id="" /></th>
-                                    <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/blue.svg" alt="" /> 20.05.2022</span></th>
-                                    <th>
-                                        <h5>12.11.2022</h5>
-                                        <h6>Erkin hujjat</h6>
-                                    </th>
-                                    <th>
-                                        <h4>“BUSINESS SUPPLY” XK</h4>
-                                        <h3>309 771 768</h3>
-                                    </th>
-                                    <th>
-                                        <p>12.05.2022 dan</p>
-                                    </th>
-                                </tr>
-                            </>
-                        ))} */}
-                        {/* <tr>
-                            <th><input type="checkbox" name="" className='' id="" /></th>
-                            <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/blue.svg" alt="" /> 20.05.2022</span></th>
-                            <th>
-                                <h5>12.11.2022</h5>
-                                <h6>Erkin hujjat</h6>
-                            </th>
-                            <th>
-                                <h4>“BUSINESS SUPPLY” XK</h4>
-                                <h3>309 771 768</h3>
-                            </th>
-                            <th>
-                                <p>12.05.2022 dan</p>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th><input type="checkbox" name="" className='' id="" /></th>
-                            <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/red.svg" alt="" /> 20.05.2022</span></th>
-                            <th>
-                                <h5>12.11.2022</h5>
-                                <h6>Erkin hujjat</h6>
-                            </th>
-                            <th>
-                                <h4>“BUSINESS SUPPLY” XK</h4>
-                                <h3>309 771 768</h3>
-                            </th>
-                            <th>
-                                <p>12.05.2022 dan</p>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th><input type="checkbox" name="" className='' id="" /></th>
-                            <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/black.svg" alt="" /> 20.05.2022</span></th>
-                            <th>
-                                <h5>12.11.2022</h5>
-                                <h6>Erkin hujjat</h6>
-                            </th>
-                            <th>
-                                <h4>“BUSINESS SUPPLY” XK</h4>
-                                <h3>309 771 768</h3>
-                            </th>
-                            <th>
-                                <p>12.05.2022 dan</p>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th><input type="checkbox" name="" className='' id="" /></th>
-                            <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/green.svg" alt="" /> 20.05.2022</span></th>
-                            <th>
-                                <h5>12.11.2022</h5>
-                                <h6>Erkin hujjat</h6>
-                            </th>
-                            <th>
-                                <h4>“BUSINESS SUPPLY” XK</h4>
-                                <h3>309 771 768</h3>
-                            </th>
-                            <th>
-                                <p>12.05.2022 dan</p>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th><input type="checkbox" name="" className='' id="" /></th>
-                            <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/purple.svg" alt="" /> 20.05.2022</span></th>
-                            <th>
-                                <h5>12.11.2022</h5>
-                                <h6>Erkin hujjat</h6>
-                            </th>
-                            <th>
-                                <h4>“BUSINESS SUPPLY” XK</h4>
-                                <h3>309 771 768</h3>
-                            </th>
-                            <th>
-                                <p>12.05.2022 dan</p>
-                            </th>
-                        </tr> */}
+                        {allReports && allReports[1] && allReports[1].map((item, index) => (
+                            <tr key={index}>
+                                <th><input type="checkbox" name="" className='' id="" /></th>
+                                <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/blue.svg" alt="" /> {item.contract_date}</span></th>
+                                <th>
+                                    <h5>12.11.2022</h5>
+                                    <h6>Erkin hujjat</h6>
+                                </th>
+                                <th>
+                                    <h4>{item.company_name}</h4>
+                                    <h3>{item.contract_number}</h3>
+                                </th>
+                                <th>
+                                    <p>{item.created_at.slice(8, 10) + `.` + item.created_at.slice(5, 7) + `.` + item.created_at.slice(0, 4)} dan</p>
+                                </th>
+                            </tr>
+                        ))}
+                        {allReports && allReports[2] && allReports[2].map((item, index) => (
+                            <tr key={index}>
+                                <th><input type="checkbox" name="" className='' id="" /></th>
+                                <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/purple.svg" alt="" /> {item.contract_date}</span></th>
+                                <th>
+                                    <h5>12.11.2022</h5>
+                                    <h6>Erkin hujjat</h6>
+                                </th>
+                                <th>
+                                    <h4>{item.company_name}</h4>
+                                    <h3>{item.contract_number}</h3>
+                                </th>
+                                <th>
+                                    <p>{item.created_at.slice(8, 10) + `.` + item.created_at.slice(5, 7) + `.` + item.created_at.slice(0, 4)} dan</p>
+                                </th>
+                            </tr>
+                        ))}
+                        {allReports && allReports[3] && allReports[3].map((item, index) => (
+                            <tr key={index}>
+                                <th><input type="checkbox" name="" className='' id="" /></th>
+                                <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/green.svg" alt="" /> {item.contract_date}</span></th>
+                                <th>
+                                    <h5>12.11.2022</h5>
+                                    <h6>Erkin hujjat</h6>
+                                </th>
+                                <th>
+                                    <h4>{item.company_name}</h4>
+                                    <h3>{item.contract_number}</h3>
+                                </th>
+                                <th>
+                                    <p>{item.created_at.slice(8, 10) + `.` + item.created_at.slice(5, 7) + `.` + item.created_at.slice(0, 4)} dan</p>
+                                </th>
+                            </tr>
+                        ))}
+                        {allReports && allReports[4] && allReports[4].map((item, index) => (
+                            <tr key={index}>
+                                <th><input type="checkbox" name="" className='' id="" /></th>
+                                <th><span className="d-flex align-items-center"><img className='me-2' src="assets/icon/circle/red.svg" alt="" /> {item.contract_date}</span></th>
+                                <th>
+                                    <h5>12.11.2022</h5>
+                                    <h6>Erkin hujjat</h6>
+                                </th>
+                                <th>
+                                    <h4>{item.company_name}</h4>
+                                    <h3>{item.contract_number}</h3>
+                                </th>
+                                <th>
+                                    <p>{item.created_at.slice(8, 10) + `.` + item.created_at.slice(5, 7) + `.` + item.created_at.slice(0, 4)} dan</p>
+                                </th>
+                            </tr>
+                        ))}
+                   
                     </tbody>
                 </table>
             </UserLayout>
