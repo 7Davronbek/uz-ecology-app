@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import UserLayout from '../components/user/UserLayout'
 import { API_PATH, CONFIG } from '../tools/constants'
+import InputMask from "react-input-mask";
 
 const Transactions1 = () => {
     const [number_contract, setnumber_contract] = useState('')
@@ -174,8 +175,18 @@ const Transactions1 = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="phone">Telefon raqami</label>
-                            <input required placeholder='+998 97 7777777' onChange={e => setphone(e.target.value)} value={phone}
-                                type="text" id='phone' className="form-control" />
+                            <InputMask
+                                mask="+\9\9\8999999999"
+                                onChange={e => setphone(e.target.value)} value={phone}
+                                placeholder='+998 (90) 000 00 00' className="form-control"
+                                alwaysShowMask={true}
+                                maskChar="_"
+                                id='phone'
+                                required='required'
+                            />
+                            {/* 
+                            <input required placeholder='+998 97 7777777' 
+                                type="text"  className="form-control" /> */}
 
                         </div>
 

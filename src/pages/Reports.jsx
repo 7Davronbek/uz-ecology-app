@@ -4,6 +4,7 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { API_PATH, CONFIG, GOOGLE_KEY } from '../tools/constants';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import InputMask from "react-input-mask";
 
 const Reports = () => {
 
@@ -255,7 +256,16 @@ const Reports = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="raqam">Telefon raqami</label>
-                            <input value={phone} onChange={e => setphone(e.target.value)} type="text" id='raqam' placeholder='+998 (90) 000 00 00' className="form-control" />
+                            <InputMask
+                                mask="+\9\9\8999999999"
+                                value={phone} onChange={e => setphone(e.target.value)}
+                                placeholder='+998 (90) 000 00 00' className="form-control"
+                                alwaysShowMask={true}
+                                maskChar="_"
+                                id='phone'
+                                required='required'
+                            />
+                            {/* <input type="text" id='raqam' placeholder='+998 (90) 000 00 00' className="form-control" /> */}
 
                         </div>
 
