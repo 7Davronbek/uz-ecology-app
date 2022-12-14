@@ -8,7 +8,8 @@ const initialStore = {
     userPhone: '',
     userPassword: '',
     userType: localStorage.getItem(ECO_USER_TYPE) || '',
-    userToken: localStorage.getItem(ECO_USER_TOKEN) || ''
+    userToken: localStorage.getItem(ECO_USER_TOKEN) || '',
+    loginLoading: false,
 }
 
 export const authReducer = (state = initialStore, action) => {

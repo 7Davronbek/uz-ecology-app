@@ -12,7 +12,7 @@ const Header = () => {
               <h5><span><img src="assets/icon/upRed.svg" alt="" /></span>8 954 934 сум</h5>
             </div>
             <h1>Tabiatdagi barcha narsalar biz uchun xizmat qiladi</h1>
-            <Link to='/register'>ro'yxatdan o'tish</Link>
+            <Link to='/login'>ro'yxatdan o'tish</Link>
           </div>
         </div>
       </div>

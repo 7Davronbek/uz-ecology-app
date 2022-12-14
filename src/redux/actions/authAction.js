@@ -58,11 +58,14 @@ export const PHONEVERIFY = (code, phone, password, navigate) => async (dispatch)
 
 // LOGIN USER
 export const LOGIN = (phone, password, navigate) => async (dispatch) => {
+    dispatch(updateAuth({ loginLoading: true }))
     if (phone.length < 9 || password.length < 4) {
-        toast.error("Ma'lumotlar to'liq kiritilmagan!")
+        toast.error("Ma'lumotlar to'liq kiritilmagan.")
+        dispatch(updateAuth({ loginLoading: false }))
     } else {
         await axios.post(API_PATH + '/accounts/login/', { phone, password })
             .then((res) => {
+                dispatch(updateAuth({ loginLoading: false }))
                 toast.success("Success!")
                 dispatch(updateAuth({ userType: res.data.role, userToken: res.data.token }))
                 localStorage.setItem(ECO_USER_TOKEN, res.data.token)
@@ -78,6 +81,10 @@ export const LOGIN = (phone, password, navigate) => async (dispatch) => {
                     return toast.error("Foydalanuvchi topilmadi!")
                 }
                 toast.error("Ma'lumotlar noto'g'ri kiritilgan!")
+                dispatch(updateAuth({ loginLoading: false }))
+            })
+            .finally(() => {
+                dispatch(updateAuth({ loginLoading: false }))
             })
     }
 }
