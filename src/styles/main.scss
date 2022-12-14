@@ -306,7 +306,6 @@ body {
         }
 
 
-
         .logo {
             display: flex;
             align-items: center;
@@ -354,12 +353,20 @@ body {
             }
         }
 
+        .nav_box_up {
+            transition: all .5s ease-in-out;
+        }
+
         &.active {
             // background-color: #fff;
             padding: 20px 0;
             backdrop-filter: blur(20px);
             background: #ffffff4a;
             box-shadow: 0 0 10px silver;
+
+            .nav_box_up {
+                color: #000;
+            }
 
             .logo {
 

@@ -8,6 +8,7 @@ import News from '../components/News'
 import PlantingOrganization from '../components/PlantingOrganization'
 import SellingOrganization from '../components/SellingOrganization'
 import ToUsers from '../components/ToUsers'
+import Donate from './Donate'
 
 const Main = () => {
     return (
@@ -17,6 +18,7 @@ const Main = () => {
             <ToUsers />
             <News />
             <FAQ />
+            {/* <Donate /> */}
             <Charity />
             <SellingOrganization />
             <PlantingOrganization />

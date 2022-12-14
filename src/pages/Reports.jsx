@@ -178,7 +178,7 @@ const Reports = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="stir">tASHkilot stiri</label>
-                            <input value={company_stir} onChange={e => setcompany_stir(e.target.value)} type="text" id='stir' className="form-control" />
+                            <input required value={company_stir} onChange={e => setcompany_stir(e.target.value)} type="text" id='stir' className="form-control" />
 
                             {/* <button className="btn myBtn mb-4">Yuborish</button> */}
                         </div>
@@ -188,34 +188,34 @@ const Reports = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="name">tashkilot nomi</label>
-                            <input value={company_name} onChange={e => setcompany_name(e.target.value)} type="text" id='name' className="form-control" />
+                            <input required value={company_name} onChange={e => setcompany_name(e.target.value)} type="text" id='name' className="form-control" />
 
                         </div>
 
                         <div className="col-lg-4">
 
                             <label htmlFor="directorname">direktor fish</label>
-                            <input value={owner_fio} onChange={e => setowner_fio(e.target.value)} type="text" id='directorname' className="form-control" />
+                            <input required value={owner_fio} onChange={e => setowner_fio(e.target.value)} type="text" id='directorname' className="form-control" />
 
                         </div>
 
                         <div className="col-lg-4">
 
                             <label htmlFor="direktorjshshiri">direktor jshshiri</label>
-                            <input onChange={e => setowner_jshshir(e.target.value)} type="text" id='direktorjshshiri' className="form-control" />
+                            <input required onChange={e => setowner_jshshir(e.target.value)} type="text" id='direktorjshshiri' className="form-control" />
 
                         </div>
 
                         <div className="col-lg-4">
 
                             <label htmlFor="shartnoma">sHARTNOMA RAQAMI</label>
-                            <input value={contract_number} onChange={e => setcontract_number(e.target.value)} type="text" id='shartnoma' className="form-control" />
+                            <input required value={contract_number} onChange={e => setcontract_number(e.target.value)} type="text" id='shartnoma' className="form-control" />
 
                         </div>
 
                         <div className="col-12">
                             <label htmlFor="izoh">izoh</label>
-                            <textarea value={description} onChange={e => setdescription(e.target.value)} name="" id="izoh" cols="40" className='form-control' ></textarea>
+                            <textarea required  value={description} onChange={e => setdescription(e.target.value)} name="" id="izoh" cols="40" className='form-control' ></textarea>
                         </div>
 
                         <div className="col-12">
@@ -249,7 +249,7 @@ const Reports = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="soni">daraxt soni</label>
-                            <input value={count_tree} onChange={e => setcount_tree(e.target.value)} type="number" id='soni' className="form-control" />
+                            <input required value={count_tree} onChange={e => setcount_tree(e.target.value)} type="number" id='soni' className="form-control" />
 
                         </div>
 
@@ -265,7 +265,7 @@ const Reports = () => {
                                 id='phone'
                                 required='required'
                             />
-                            {/* <input type="text" id='raqam' placeholder='+998 (90) 000 00 00' className="form-control" /> */}
+                            {/* <input required type="text" id='raqam' placeholder='+998 (90) 000 00 00' className="form-control" /> */}
 
                         </div>
 
@@ -335,7 +335,7 @@ const Reports = () => {
                         <div className="col-lg-4">
 
                             <label htmlFor="xisobotraqami">Xisobot raqami</label>
-                            <input onChange={e => setnumber_report(e.target.value)} value={number_report} type="text" id='xisobotraqami' className="form-control" />
+                            <input required onChange={e => setnumber_report(e.target.value)} value={number_report} type="text" id='xisobotraqami' className="form-control" />
 
                         </div>
 
@@ -365,7 +365,7 @@ const Reports = () => {
 
                         <div className="col-lg-4">
                             <label htmlFor="manzil">manzilni kiriting</label>
-                            <textarea name="" id="manzil" cols="40" className='form-control' ></textarea>
+                            <textarea required  name="" id="manzil" cols="40" className='form-control' ></textarea>
                         </div>
 
                         <div className="col-12">
