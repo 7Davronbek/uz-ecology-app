@@ -1215,19 +1215,40 @@ body {
             // padding-top: 55px;
             height: 100%;
 
+            .logout {
+                background: #FFFFFF;
+                border-radius: 3px;
+                font-family: 'DM Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 20px;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: #3E975B !important;
+                padding: 12px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                margin-bottom: 0 !important;
+            }
+
             .bottomLeft,
             .bottomRight {
                 padding: 55px 0;
             }
 
             .bottomLeft {
-                // display: none;
-
-
-
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: calc(100vh - 100px);
                 background-color: $green;
-                padding: 55px 35px !important;
-                height: 100%;
+                padding: 55px 35px 30px !important;
+                // height: 100%;
 
                 h6 {
                     font-family: 'DM Sans';
