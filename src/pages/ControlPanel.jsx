@@ -14,13 +14,13 @@ const ControlPanel = () => {
                             <div className="cardsBody">45 219</div>
                         </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 mt-5 mt-lg-0">
                         <div className="cards">
                             <div className="cardsTop">Tasdiqlangan</div>
                             <div className="cardsBody">34 044</div>
                         </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 mt-5 mt-lg-0">
                         <div className="cards">
                             <div className="cardsTop">Jarayonda</div>
                             <div className="cardsBody">2 187</div>

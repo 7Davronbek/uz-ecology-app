@@ -24,7 +24,7 @@ const UserType = () => {
         <div className='UserType'>
             <DonateLayout>
                 <h1>Kirish</h1>
-                <div className="col-lg-6">
+                <div className="col-lg-6 user_box">
 
                     <div className="cards">
                         <h5>Daraxt ektiruvchi</h5>

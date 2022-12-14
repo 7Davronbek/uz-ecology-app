@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='Footer'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 text-lg-start text-center">
                             <Link className='logo' to='/'>
                                 <span><img src="assets/image/logo.svg" alt="" /></span>
                                 <span className='text'>O’zbekiston respublikasi ekologiya

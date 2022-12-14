@@ -32,8 +32,7 @@ const Register = () => {
             <DonateLayout>
 
                 <h1>Registratsiya</h1>
-
-                <div className="col-lg-6">
+                <div className="col-lg-6 reg_inp">
                     <div className="cards">
                         <label htmlFor="phone">Telefon raqam</label>
                         <input onChange={e => setPhone(e.target.value)} value={phone} type="text" id='phone' className="form-control" />
@@ -46,7 +45,6 @@ const Register = () => {
                         <Link className='a' to='/login'>Akkauntingiz bormi?</Link>
                     </div>
                 </div>
-
             </DonateLayout>
         </div>
     )
