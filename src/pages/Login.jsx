@@ -22,13 +22,12 @@ const Login = () => {
                     <div className="cards">
                         <label htmlFor="phone">Telefon raqam</label>
                         <InputMask
-                            mask="+\9\9\8\ 99 999 99 99"
+                            mask="+\9\9\8999999999"
                             onChange={e => setPhone(e.target.value)} value={phone} type="text" id='phone' className="form-control"
                             alwaysShowMask={true}
                             maskChar="_"
                             required='required'
                         />
-                        {/* <input  /> */}
 
                         <label htmlFor="password">Parol</label>
                         <input onChange={e => setPassword(e.target.value)} value={password} type="password" id='password' className="form-control" />
