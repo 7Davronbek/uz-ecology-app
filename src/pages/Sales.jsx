@@ -4,6 +4,7 @@ import UserLayout from '../components/user/UserLayout'
 import { API_PATH, CONFIG, GOOGLE_KEY } from '../tools/constants'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { toast } from 'react-toastify';
+import StaticOfDonate from '../components/StaticOfDonate';
 
 const Sales = () => {
     const [catchRegion, setCatchRegion] = useState('')
@@ -286,6 +287,14 @@ const Sales = () => {
 
                     <div className="col-lg-4 col-md-6 ms-auto mt-5 myBtnP">
                         <button disabled={loader} type='submit' className="btn myBtn w-100 d-flex align-items-center justify-content-center">davom etish</button>
+                    </div>
+
+                    <div style={{backgroundColor: "transparent"}} className="StaticOfDonate ">
+
+                        <div className="col-12">
+                            <StaticOfDonate />
+                        </div>
+
                     </div>
 
                 </form>

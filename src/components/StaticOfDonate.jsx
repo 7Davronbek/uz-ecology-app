@@ -64,22 +64,14 @@ const options = {
 
 const StaticOfDonate = () => {
     return (
-        <div className='StaticOfDonate'>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="cards">
-                            <h1>Xayriya qilingan mablag’ statistikasi (so'mda)</h1>
+        <div className="cards">
+            <h1>Xayriya qilingan mablag’ statistikasi (so'mda)</h1>
 
-                            <Bar
-                                data={data}
-                                options={options}
-                            ></Bar>
+            <Bar
+                data={data}
+                options={options}
+            ></Bar>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }

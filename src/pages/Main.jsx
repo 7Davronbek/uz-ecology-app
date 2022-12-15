@@ -16,7 +16,15 @@ const Main = () => {
         <>
             <Navbar />
             <Header />
-            <StaticOfDonate />
+            <div className="StaticOfDonate">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <StaticOfDonate />
+                        </div>
+                    </div>
+                </div>
+            </div>
             <ToUsers />
             <News />
             <FAQ />
