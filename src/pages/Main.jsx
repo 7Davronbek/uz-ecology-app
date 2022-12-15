@@ -8,13 +8,15 @@ import News from '../components/News'
 import PlantingOrganization from '../components/PlantingOrganization'
 import SellingOrganization from '../components/SellingOrganization'
 import ToUsers from '../components/ToUsers'
-import Donate from './Donate'
+// import Donate from './Donate'
+import StaticOfDonate from './../components/StaticOfDonate';
 
 const Main = () => {
     return (
         <>
             <Navbar />
             <Header />
+            <StaticOfDonate />
             <ToUsers />
             <News />
             <FAQ />
