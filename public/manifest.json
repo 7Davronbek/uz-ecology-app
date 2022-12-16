@@ -3,7 +3,7 @@
   "name": "O’zbekiston Respublikasi ekologiya va atrof muhitni muhofaza qilish davlat qo’mitasi App App Sample",
   "icons": [
     {
-      "src": "/public/assets/favicon.svg",
+      "src": "favicon.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

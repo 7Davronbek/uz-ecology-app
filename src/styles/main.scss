@@ -1581,6 +1581,7 @@ body {
                     visibility: visible;
                     transform: translateX(100%);
                     overflow-y: auto;
+                    z-index: 9999;
 
                     &.active {
                         opacity: 1;
