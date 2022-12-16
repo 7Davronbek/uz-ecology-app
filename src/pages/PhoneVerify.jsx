@@ -30,7 +30,7 @@ const PhoneVerify = () => {
 
                 <h1>Iltimos, telefonni tasdiqlang!</h1>
 
-                <div className="col-6">
+                <div className="col-lg-6">
                     <div className="cards">
 
                         <h3>Tasdiqlash</h3>

@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <div className={`Navbar ${location.pathname === '/news-detail' && 'active '} ${navbar ? 'active' : ''}`}>
             <div className="container">
-                <div className="row align-items-center">
+                <div className="row align-items-center position-relative">
                     <div className="col-lg-4 col-10">
                         <Link className='logo' to='/'>
                             <span><img src="assets/image/logo.svg" alt="" /></span>

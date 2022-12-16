@@ -7,11 +7,11 @@ const DonateLayout = (props) => {
             <div className="row h-100">
                 <div className="col-lg-7 leftside">
                     <Link to='/'><img src="assets/icon/fullIcon.svg" alt="" /></Link>
-                    <div className='leftWrap'>
+                    <div className='leftWrap row'>
                         {props.children}
                     </div>
                 </div>
-                <div className="col-lg-5 rightImg">
+                <div className="col-lg-5 rightImg row">
                     <div className="img">
                         <img src="assets/image/cartBg.png" alt="" />
                     </div>
