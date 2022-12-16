@@ -1418,12 +1418,17 @@ body {
                                 top: 0;
                                 left: -1px;
                                 position: absolute;
+
+                                @media(max-width: 992px) {
+                                    background-color: $green;
+                                }
                             }
 
                             @media(max-width: 992px) {
                                 font-size: 14px;
                                 line-height: 18px;
                                 color: #000;
+                                padding-left: 15px;
                             }
                         }
 
