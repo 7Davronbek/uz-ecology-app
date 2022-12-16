@@ -1308,11 +1308,21 @@ body {
 
                     a {
                         color: #fff;
+
+                        @media(max-width: 992px) {
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: #000;
+                        }
                     }
 
                     span {
                         margin-right: 15px;
                         padding-bottom: 2px;
+
+                        @media(max-width: 992px) {
+                            display: none;
+                        }
                     }
                 }
 
@@ -1348,11 +1358,25 @@ body {
 
                                 span {
                                     margin-right: 15px;
+
+                                    @media(max-width: 992px) {
+                                        display: none;
+                                    }
+                                }
+
+                                @media(max-width: 992px) {
+                                    font-size: 14px;
+                                    line-height: 18px;
+                                    color: #000;
                                 }
                             }
 
                             &::after {
                                 background-image: url(../images/down.svg);
+
+                                @media(max-width: 992px) {
+                                    background-image: url(../images/downBlack.svg);
+                                }
                             }
                         }
                     }
@@ -1379,6 +1403,11 @@ body {
                             &:hover,
                             &.active {
                                 background: #6EB184;
+
+                                @media(max-width: 992px) {
+                                    background: transparent;
+                                    color: $green;
+                                }
                             }
 
                             &::after {
@@ -1390,6 +1419,16 @@ body {
                                 left: -1px;
                                 position: absolute;
                             }
+
+                            @media(max-width: 992px) {
+                                font-size: 14px;
+                                line-height: 18px;
+                                color: #000;
+                            }
+                        }
+
+                        @media(max-width: 992px) {
+                            padding-left: 10px;
                         }
                     }
                 }
@@ -1430,6 +1469,28 @@ body {
                         }
                     }
                 }
+
+                @media(max-width: 992px) {
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                    padding-top: 130px !important;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: #fff;
+                    transition: all .5s ease-in-out;
+                    opacity: 0;
+                    visibility: visible;
+                    transform: translateX(100%);
+
+                    &.active {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateX(0);
+                    }
+                }
             }
 
             .bottomRight {
@@ -1437,6 +1498,8 @@ body {
                 overflow-y: auto;
                 height: 100%;
             }
+
+            @media(max-width: 992px) {}
         }
 
         .logo {
@@ -1708,6 +1771,11 @@ body {
             color: #343B4C;
             width: 380px;
             margin-bottom: 60px;
+
+            @media(max-width: 767px) {
+                font-size: 32px;
+                line-height: 38px;
+            }
         }
 
         .cards {
@@ -1733,6 +1801,25 @@ body {
                     left: 7px;
                     background: #fff;
                     padding: 0 9px;
+                }
+
+            }
+
+            .d-flex {
+
+                .me-3 {
+
+                    @media(max-width: 1505px) {
+                        margin-right: 0 !important;
+                    }
+                }
+
+                @media(max-width: 1505px) {
+                    flex-direction: column;
+                }
+
+                .btn {
+                    margin-top: 24px;
                 }
             }
 

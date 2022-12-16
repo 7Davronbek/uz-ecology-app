@@ -37,10 +37,11 @@ const UserLayout = (props) => {
 
                 <div className="col-lg-3 px-3 navabarLeft">
                     <Link className='logo' to='/'>
-                        <span><img src="assets/image/logo.svg" alt="" /></span>
+                        <img src="assets/icon/logoFull.svg" alt="" />
+                        {/* <span><img src="assets/image/logo.svg" alt="" /></span>
                         <span className='text'>O’zbekiston respublikasi ekologiya
                             va atrof muhitni muhofaza qilish
-                            davlat qo’mitasi</span>
+                            davlat qo’mitasi</span> */}
                     </Link>
                 </div>
                 <div className="col-lg-9 px-3 navbarRight">
@@ -74,9 +75,9 @@ const UserLayout = (props) => {
 
             <div className='row  userBottom'>
 
-                <div className="col-lg-3 px-3 bottomLeft">
+                <div className="col-lg-3 px-3 bottomLeft active">
                     <div>
-                        <h6> OOO YASHIL DARAXT</h6>
+                        <h6 className='d-none d-lg-block'> OOO YASHIL DARAXT</h6>
 
                         <Accordion className='service__list w-100 border2' open={open} toggle={toggle}>
 
