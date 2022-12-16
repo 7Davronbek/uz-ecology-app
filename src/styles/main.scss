@@ -1173,6 +1173,14 @@ body {
 
             .navabarLeft {
                 background-color: $green;
+
+                .logo {
+                    padding: 10px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
             }
 
             .navbarRight {
@@ -1257,7 +1265,7 @@ body {
 
         .userBottom {
             // padding-top: 55px;
-            height: calc(100vh - 100px);
+            height: calc(100vh - 120px);
 
             .logout {
                 background: #FFFFFF;
@@ -1278,6 +1286,12 @@ body {
                 justify-content: center;
                 cursor: pointer;
                 margin-bottom: 0 !important;
+
+                @media(max-width: 992px) {
+                    font-size: 12px;
+                    line-height: 20px;
+                    border: 2px solid $green;
+                }
             }
 
             .bottomLeft,
@@ -1368,6 +1382,7 @@ body {
                                     font-size: 14px;
                                     line-height: 18px;
                                     color: #000;
+                                    font-weight: 600;
                                 }
                             }
 
@@ -1458,6 +1473,11 @@ body {
                         .icon {
                             transition: all .2s ease-in-out;
                         }
+
+                        @media(max-width: 992px) {
+                            font-weight: 600;
+                            padding-left: 0;
+                        }
                     }
 
                     &:hover,
@@ -1472,6 +1492,38 @@ body {
                         a {
                             color: $green;
                         }
+
+                        @media(max-width: 992px) {
+                            background-color: transparent;
+                            color: $green
+                        }
+                    }
+                }
+
+                .donate {
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 20px;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    width: 100%;
+                    justify-content: center;
+                    display: none;
+
+                    @media(max-width: 992px) {
+                        display: flex;
+                    }
+
+                }
+
+                .bottomPhone, .tree {
+                    display: none;
+
+                    @media(max-width: 992px) {
+                        display: block;
                     }
                 }
 
@@ -1489,6 +1541,7 @@ body {
                     opacity: 0;
                     visibility: visible;
                     transform: translateX(100%);
+                    overflow-y: auto;
 
                     &.active {
                         opacity: 1;

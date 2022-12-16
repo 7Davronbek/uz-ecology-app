@@ -139,7 +139,22 @@ const UserLayout = (props) => {
                         <h6 className={`last ${location.pathname === '/settings' ? 'active' : ''}`}><Link to='/settings'><span className='icon icon-setting'></span> Sozlamalar </Link></h6>
                     </div>
 
-                    <h6 onClick={() => dispatch(LOGOUT(navigate))} className="logout"><span><img src="assets/icon/logout.svg" alt="" /></span> Chiqish</h6>
+                    <div>
+                        <div className="tree mb-2 text-center">
+                            <img src="assets/image/tree.png" alt="" />
+                        </div>
+                        <div className="bottomPhone">
+                            <div className="phoneWrap d-flex align-items-center justify-content-center mb-3">
+                                <span className='me-3'><img src="assets/icon/phone.svg" alt="" /></span>
+                                <div>
+                                    <a className='d-block' target={'_blank'} rel="noreferrer" href="tel:+998 98 800 77 19">+998 (98) 800 77 19</a>
+                                    <a className='d-block' target={'_blank'} rel="noreferrer" href="tel:+998 95 500 77 19">+998 (95) 500 77 19</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 className='mb-3'><Link to='/donate' className="btn myBtn donate">Xayriya qilish</Link></h6>
+                        <h6 onClick={() => dispatch(LOGOUT(navigate))} className="logout"><span><img src="assets/icon/logout.svg" alt="" /></span> Chiqish</h6>
+                    </div>
 
                 </div>
                 <div className="col-lg-9 px-3 bottomRight">
