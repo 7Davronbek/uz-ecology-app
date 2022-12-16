@@ -11,6 +11,11 @@ import { LOGOUT } from '../../redux/actions/authAction';
 
 const UserLayout = (props) => {
     const [open, setOpen] = useState('0');
+    const [burger, setBurger] = useState(false);
+
+    const closeBurger = () => {
+        setBurger(false);
+    }
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -43,6 +48,8 @@ const UserLayout = (props) => {
                             va atrof muhitni muhofaza qilish
                             davlat qo’mitasi</span> */}
                     </Link>
+
+                    <div onClick={() => setBurger(true)} className="burgerOpen"><img src="assets/icon/burger.svg" alt="" /></div>
                 </div>
                 <div className="col-lg-9 px-3 navbarRight">
                     <div className="inputWrap">
@@ -75,20 +82,24 @@ const UserLayout = (props) => {
 
             <div className='row  userBottom'>
 
-                <div className="col-lg-3 px-3 bottomLeft active">
+                <div className={`col-lg-3 px-3 bottomLeft ${burger ? 'active' : ''}`}>
                     <div>
                         <h6 className='d-none d-lg-block'> OOO YASHIL DARAXT</h6>
 
-                        <Accordion className='service__list w-100 border2' open={open} toggle={toggle}>
+                        <div className="languageWrapMobile d-flex align-items-center justify-content-between mb-5 pe-3">
 
-                            {/* <AccordionItem className='wrap'>
-                            <AccordionHeader targetId='1'>
-                                <h5></h5>
-                            </AccordionHeader>
-                            <AccordionBody accordionId='1'>
-                                <Link className={location.pathname === '/control-panel' ? 'active' : ''} to='/control-panel'>Boshqaruv paneli</Link>
-                            </AccordionBody>
-                        </AccordionItem> */}
+                            <select className='burgerLang mb-0' name="" id="">
+                                <option value="">Uzb</option>
+                                <option value="">Рус</option>
+                                <option value="">Eng</option>
+                            </select>
+
+                            <div onClick={closeBurger} className="burgerClose">
+                                <img src="assets/icon/burgerClose.svg" alt="" />
+                            </div>
+                        </div>
+
+                        <Accordion className='service__list w-100 border2' open={open} toggle={toggle}>
                             <h6 className={`last ${location.pathname === '/control-panel' ? 'active' : ''}`}><Link to='/control-panel'><span className='icon icon-home'></span>Bosh sahifa</Link></h6>
 
 
